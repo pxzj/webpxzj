@@ -19,4 +19,6 @@ public class IndexController {
         modelAndView.addObject("company", "纪青空间设计");
 		return "index";
 	}
+
+	
 }

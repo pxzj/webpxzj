@@ -20,7 +20,17 @@ a:focus {
 	outline: none;
 }
 
-a {	color: #FFF;  }
+#companyicon 
+{ 
+    width: 180px;
+    height: 200px;
+    padding: 10px 15px;
+    position: absolute;
+    top: 0;
+    left: 40px;
+}
+
+a {	color: black;  }
 
 a:hover { color: #FF0; }
 
@@ -98,7 +108,7 @@ p:last-child { margin-bottom: 0; }
     padding: 60px 50px;
     cursor: default;
     z-index: 100;
-    background: rgba(0,0,0,0.5);
+    background: white;
     color: white;
     z-index: 1000;
 }
@@ -115,6 +125,22 @@ p:last-child { margin-bottom: 0; }
     padding: 50px 10%;
     width: 100%;
     position: relative;
+}
+
+.content_font{
+    color: black;
+    font-size: 3;
+}
+
+.content_left{
+    float: left;
+    width: 200px;
+    height: 100%;
+}
+
+.content_right{
+    margin-left: 200px;
+    height: 100%;
 }
 
 .tm-nav-fa-icon {
@@ -135,22 +161,34 @@ p:last-child { margin-bottom: 0; }
     margin-right: 35px;
 }
 
-.tm-main-nav { font-size: 1.6rem; }
+
+.tm-main-nav 
+{ 
+    font-size: 1.6rem;
+    position: absolute;
+    top: 230px;
+    left: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    border-right:1px solid #000
+}
 .tm-main-nav li { list-style: none; }
 .tm-main-nav a {
     
     background-repeat: no-repeat;
     background-position: left bottom;
-    color: white;
+    color: black;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
             align-items: center;
-    margin: 20px 0 40px 0;
-    padding-bottom: 40px;
-    padding-right: 80px;
+    margin: 5px 0 5px 0;
+    padding-bottom: 10px;
+    padding-right: 60px;
+    height: 10px;
 }
 
 .tm-main-nav a:hover,
@@ -173,7 +211,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .tm-btn {
-    padding: 15px 50px;
+    padding: 15px 10px;
     font-size: 1.3rem;
     font-weight: 300;
     background: transparent;
@@ -361,7 +399,7 @@ footer a { color: white; }
     #tmSideBar.show { left: 0; }
 
     .sidebar {
-        background: rgba(0,0,0,0.9);
+        background: white;
         padding: 20px;
     }
 
