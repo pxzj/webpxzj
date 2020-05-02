@@ -7,10 +7,19 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class IndexController {
 
-	@RequestMapping("/")
+    // 登陆页面
+	@RequestMapping("/login")
 	public String home() {
-		return "欢迎登陆网页";
-	}
+        
+		return "login";
+    }
+    
+    //话题新增
+    @RequestMapping("/newsadd")
+	public String topic() {
+        
+		return "newsadd";
+    }
 
 	@RequestMapping("/index")
 	public String index() {
