@@ -129,7 +129,6 @@ p:last-child { margin-bottom: 0; }
 
 .content_font{
     color: black;
-    font-size: 3;
 }
 
 .content_left{
@@ -142,6 +141,35 @@ p:last-child { margin-bottom: 0; }
     margin-left: 200px;
     height: 100%;
 }
+
+.homeimg{
+    margin-left: 40px;
+}
+
+.content_right h2{
+    margin-left: 40px;
+    color: #000;
+    padding: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.content_right font{
+    margin-left: 40px;
+    margin-top: 10px;
+    color: #000;
+}
+
+.serviceimgs{
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.image-box {
+    float: left;
+    padding: 1px;
+    overflow: hidden;
+  }
 
 .tm-nav-fa-icon {
     width: 55px;

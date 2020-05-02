@@ -1,497 +1,572 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8"/>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>纪青空间设计</title>
 
-	<title>纪青空间设计</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" />
+    <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link rel="stylesheet" href="css/tooplate-style.css" />
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400"/>  <!-- Google web font "Open Sans" -->
-	<link rel="stylesheet" href="css/fontawesome-all.min.css"/>
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="css/magnific-popup.css"/>
-	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-	<link rel="stylesheet" href="css/tooplate-style.css"/>
+    <script>
+        var renderPage = true;
 
-	<script>
-		var renderPage = true;
-
-	if(navigator.userAgent.indexOf('MSIE')!==-1
-		|| navigator.appVersion.indexOf('Trident/') > 0){
-   		/* Microsoft Internet Explorer detected in. */
-   		alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
-   		renderPage = false;
-	}
-	</script>
+        if (navigator.userAgent.indexOf('MSIE') !== -1 ||
+            navigator.appVersion.indexOf('Trident/') > 0) {
+            /* Microsoft Internet Explorer detected in. */
+            alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
+            renderPage = false;
+        }
+    </script>
 </head>
 
 <body>
-	<!-- Loader -->
-	<div id="loader-wrapper">
-		<div id="loader"></div>
-		<div class="loader-section section-left"></div>
-		<div class="loader-section section-right"></div>
-	</div>
-	
-	<!-- Page Content -->
-	<div class="container-fluid tm-main">
-		<div class="row tm-main-row">
-			<!-- Sidebar -->
-			<div id="tmSideBar" class="col-xl-3 col-lg-4 col-md-12 col-sm-12 sidebar">
-				<img src="img/gallery-img-01-tn.jpg" id="companyicon" alt="Image" />
-				<button id="tmMainNavToggle" class="menu-icon">&#9776;</button>
-				<div class="inner">
-					<nav id="tmMainNav" class="tm-main-nav">
-						<ul>
-							<li>
-								<a href="#home" id="tmNavLink1" class="scrolly active"  data-page="#tm-section-1">
-									<span>首页/HOME</span>
-								</a>
-							</li>
-							<li>
-								<a href="#service" id="tmNavLink2" class="scrolly"  data-page="#tm-section-2" data-page-type="carousel">
-									<span>服务/SERVICE</span>
-								</a>
-							</li>							
-							<li>
-								<a href="#company" class="scrolly"  data-page="#tm-section-3">
-									<span>案例/WORK</span>
-								</a>
-							</li>
-							<li>
-								<a href="#topic" class="scrolly"  data-page="#tm-section-4">
-									<span>话题/TOPIC</span>
-								</a>
-							</li>
-							<li>
-								<a href="#recruit" class="scrolly" data-page="#tm-section-5">
-									<span>招募/RECRUIT</span>
-								</a>
-							</li>
-							<li>
-								<a href="#contact" class="scrolly"  data-page="#tm-section-6">
-									<span>联系/CONTACT</span>
-								</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</div>
+    <!-- Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
 
-			<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 tm-content">
+    <!-- Page Content -->
+    <div class="container-fluid tm-main">
+        <div class="row tm-main-row">
+            <!-- Sidebar -->
+            <div id="tmSideBar" class="col-xl-3 col-lg-4 col-md-12 col-sm-12 sidebar">
+                <img src="img/gallery-img-01-tn.jpg" id="companyicon" alt="Image" />
+                <button id="tmMainNavToggle" class="menu-icon">&#9776;</button>
+                <div class="inner">
+                    <nav id="tmMainNav" class="tm-main-nav">
+                        <ul>
+                            <li>
+                                <a href="#home" id="tmNavLink1" class="scrolly active" data-page="#tm-section-1">
+                                    <span>首页/HOME</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#service" id="tmNavLink2" class="scrolly" data-page="#tm-section-2"
+                                    data-page-type="carousel">
+                                    <span>服务/SERVICE</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#company" class="scrolly" data-page="#tm-section-3">
+                                    <span>案例/WORK</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#topic" class="scrolly" data-page="#tm-section-4">
+                                    <span>话题/TOPIC</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#recruit" class="scrolly" data-page="#tm-section-5">
+                                    <span>招募/RECRUIT</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#contact" class="scrolly" data-page="#tm-section-6">
+                                    <span>联系/CONTACT</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
 
-					<!-- section 1 首页-->
-					<section id="tm-section-1" class="tm-section">
-						<div class="ml-auto ">
-<font class="content_font content_left">
-							<center>安徽纪青空间设计有限责任公司<br/>
-J_Q SPACE DESIGN STUDIO<br/>
-是一家专注商业空间设计的纯设计公司<br/>
-创始人兼设计总监纪青<br/>
-有着多年的一线城市设计经验<br/>
-以及国际性前沿设计审美<br/>
-专业从事酒店/餐饮/店铺/文娱/办公等室内外空间设计<br/>
-是一个新锐、年轻、和极具创意的团队<br/>
-追求品质、注重细节<br/>
-一直秉承着<br/>
-为客户创造利益最大化为最终目标<br/>
-用心，做好的设计<br/>
-这一理念<br/>
-对每一个项目进行全方位的分析与系统规划<br/>
-完成从经营角度<br/>
-到设计效果<br/>
-再到施工落地的完美呈现<br/></center>
-</font>
-								<img src="img/gallery-img-01-tn.jpg" class="homeimg" alt="Image" />
-						</div>
-					</section>
+            <div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 tm-content">
 
-					<!-- section 2 服务-->
-					<section id="tm-section-2" class="tm-section tm-section-carousel">
-						<div class="ml-auto">
-<font size="3" class="content_left content_font">
-							<center><h2>设 计 流 程</h2>
-<br/>
-① 初步沟通<br/>
-  明确设计需求 确定设计目标（支付设计定金20%）<br/>
-<br/>
-② 现场勘测<br/>
-现场勘察测量<br/>
-<br/>
-③ 初步设计方案<br/>
-确定设计方案 签订设计合同（支付首期费用30%）<br/>
-<br/>
-④ 效果图绘制<br/>
-三维空间展示（支付二期费用45%）<br/>
-<br/>
-⑤ 施工图绘制<br/>
-施工图交付 确定开工日期<br/>
-<br/>
-⑥ 选材配饰<br/>
-确定材料样板 搭配灯光软装<br/>
-<br/>
-⑦ 设计维护<br/>
-全面竣工 全周期设计服务（支付尾款费用5%）<br/></center>
-</font>
-								<div class="content_right">
-										<h2 > 服务范围 </h2>
-										<font size="3" class="content_font">
-						<center>酒店   餐饮   店铺   文娱   办公   售楼处   样板间</center>
-										</font>
-										<div class="serviceimgs">
-<img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-min"/>
-<img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-min"/>
-<img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-min"/>
-<img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-min"/>
-<img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-min"/>
-<img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-min"/>
-<img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-min"/>
-<img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-min"/>
-										</div>
-								</div>
-						</div>		          	
-					</section>
+                <!-- section 1 首页-->
+                <section id="tm-section-1" class="tm-section">
+                    <div class="ml-auto ">
+                        <font size="2" class="content_left content_font">
+                            <center>安徽纪青空间设计有限责任公司<br />
+                                J_Q SPACE DESIGN STUDIO<br />
+                                是一家专注商业空间设计的纯设计公司<br />
+                                创始人兼设计总监纪青<br />
+                                有着多年的一线城市设计经验<br />
+                                以及国际性前沿设计审美<br />
+                                专业从事酒店/餐饮/店铺/文娱/办公等室内外空间设计<br />
+                                是一个新锐、年轻、和极具创意的团队<br />
+                                追求品质、注重细节<br />
+                                一直秉承着<br />
+                                为客户创造利益最大化为最终目标<br />
+                                用心，做好的设计<br />
+                                这一理念<br />
+                                对每一个项目进行全方位的分析与系统规划<br />
+                                完成从经营角度<br />
+                                到设计效果<br />
+                                再到施工落地的完美呈现<br /></center>
+                        </font>
+                        <img src="img/gallery-img-01-tn.jpg" class="homeimg" alt="Image" />
+                    </div>
+                </section>
 
-					<!-- section 3 案例-->
-					<section id="tm-section-3" class="tm-section tm-section-carousel">
-						<div>
-							<header class="mb-4"><h2 class="tm-text-shadow">Our Products</h2></header>		            
-							<div class="tm-img-container">
-								<div class="tm-img-slider">
-									<a href="img/gallery-img-01.jpg" class="tm-slider-img"><img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-fluid"/></a>
-									<a href="img/gallery-img-02.jpg" class="tm-slider-img"><img src="img/gallery-img-02-tn.jpg" alt="Image" class="img-fluid"/></a>
-									<a href="img/gallery-img-03.jpg" class="tm-slider-img"><img src="img/gallery-img-03-tn.jpg" alt="Image" class="img-fluid"/></a>
-									<a href="img/gallery-img-04.jpg" class="tm-slider-img"><img src="img/gallery-img-04-tn.jpg" alt="Image" class="img-fluid"/></a>
-									<a href="img/gallery-img-05.jpg" class="tm-slider-img"><img src="img/gallery-img-05-tn.jpg" alt="Image" class="img-fluid"/></a>
-									<a href="img/gallery-img-06.jpg" class="tm-slider-img"><img src="img/gallery-img-06-tn.jpg" alt="Image" class="img-fluid"/></a>
-								</div>
-							</div>		            		          
-						</div>       		          	
-					</section>
+                <!-- section 2 服务-->
+                <section id="tm-section-2" class="tm-section tm-section-carousel">
+                    <div class="ml-auto">
+                        <font size="2" class="content_font content_left">
+                            <center>
+                                <h2>设 计 流 程</h2>
+                                <br />
+                                ① 初步沟通<br />
+                                明确设计需求 确定设计目标（支付设计定金20%）<br />
+                                <br />
+                                ② 现场勘测<br />
+                                现场勘察测量<br />
+                                <br />
+                                ③ 初步设计方案<br />
+                                确定设计方案 签订设计合同（支付首期费用30%）<br />
+                                <br />
+                                ④ 效果图绘制<br />
+                                三维空间展示（支付二期费用45%）<br />
+                                <br />
+                                ⑤ 施工图绘制<br />
+                                施工图交付 确定开工日期<br />
+                                <br />
+                                ⑥ 选材配饰<br />
+                                确定材料样板 搭配灯光软装<br />
+                                <br />
+                                ⑦ 设计维护<br />
+                                全面竣工 全周期设计服务（支付尾款费用5%）<br />
+                            </center>
+                        </font>
+                        <div class="content_right">
+                            <h2>
+                                <center>服务范围 </center>
+                            </h2>
+                            <font size="3">
+                                <center>酒店 餐饮 店铺 文娱 办公 售楼处 样板间</center>
+                            </font>
+                            <div class="serviceimgs">
+                                <img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-min" />
+                                <img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-min" />
+                                <img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-min" />
+                                <img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-min" />
+                                <img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-min" />
+                                <img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-min" />
+                                <img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-min" />
+                                <img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-min" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <style>
+                    * {
+                        box-sizing: border-box;
+                    }
 
-					<!-- section 4 话题-->
-					<section id="tm-section-4" class="tm-section">						
-						<div class="row mb-4">
-							<header class="col-xl-12"><h2 class="tm-text-shadow">Our Company</h2></header>		
-						</div>
-						<div class="row">
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fab fa-apple tm-icon-circled tm-icon-media"></i>
-									<div class="media-body">
-										<h3>HTML Templates</h3>
-										<p>We provide a variety of templates for you at no cost. Please spread a word about <a href="https://plus.google.com/+tooplate" target="_parent">Tooplate</a> website. Thank you.</p>	
-									</div>
-								</div>
-							</div>	
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fas fa-map-pin mr-4 tm-icon-circled tm-icon-media"></i>	
-									<div class="media-body">
-										<h3>Free Images</h3>
-										<p>Photos by <a href="https://unsplash.com" target="_blank">Unsplash.com</a> website, ac ornare arcu finibus sed. Aenean ultrices nisi sit amet facilisis viverra.</p>	
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fab fa-fly mr-4 tm-icon-circled tm-icon-media"></i>
-									<div class="media-body">
-										<h3>Phasellus eleifend</h3>
-										<p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices nisi sit amet facilisis viverra.</p>		
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fab fa-linode mr-4 tm-icon-circled tm-icon-media"></i>
-									<div class="media-body">
-										<h3>Phasellus eleifend</h3>
-										<p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices nisi sit amet facilisis viverra.</p>	
-									</div>
-								</div>
-							</div>		
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fab fa-linode mr-4 tm-icon-circled tm-icon-media"></i>
-									<div class="media-body">
-										<h3>Phasellus eleifend</h3>
-										<p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices nisi sit amet facilisis viverra.</p>	
-									</div>
-								</div>
-							</div>			 
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fab fa-linode mr-4 tm-icon-circled tm-icon-media"></i>
-									<div class="media-body">
-										<h3>Phasellus eleifend</h3>
-										<p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices nisi sit amet facilisis viverra.</p>	
-									</div>
-								</div>
-							</div>		
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fab fa-linode mr-4 tm-icon-circled tm-icon-media"></i>
-									<div class="media-body">
-										<h3>Phasellus eleifend</h3>
-										<p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices nisi sit amet facilisis viverra.</p>	
-									</div>
-								</div>
-							</div>		
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fab fa-linode mr-4 tm-icon-circled tm-icon-media"></i>
-									<div class="media-body">
-										<h3>Phasellus eleifend</h3>
-										<p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices nisi sit amet facilisis viverra.</p>	
-									</div>
-								</div>
-							</div>		
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fab fa-linode mr-4 tm-icon-circled tm-icon-media"></i>
-									<div class="media-body">
-										<h3>Phasellus eleifend</h3>
-										<p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices nisi sit amet facilisis viverra.</p>	
-									</div>
-								</div>
-							</div>			 	          		
-						</div>						               
-					</section>
+                    #horizontal-waterfull {
+                        max-width: 100%;
+                        width: 900px;
+                    }
 
-					<!-- section 5 招募-->
-					<section id="tm-section-5" class="tm-section">
-						<div class="tm-bg-transparent-black tm-contact-box-pad">
-							<div class="row mb-4">
-								<div class="col-sm-12">
-									<header><h2 class="tm-text-shadow">Contact Us</h2></header>
-								</div>
-							</div>
-							<div class="row tm-page-4-content">
-								<div class="col-md-6 col-sm-12 tm-contact-col">
-									<div class="contact_message">
-										<form action="#contact" method="post" class="contact-form">
-											<div class="form-group">
-												<input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name" required=""/>
-											</div>
-											<div class="form-group">
-												<input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email" required=""/>
-											</div>
-											<div class="form-group">
-												<textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder="Message" required=""></textarea>
-											</div>
-											<button type="submit" class="btn tm-btn-submit tm-btn ml-auto">Submit</button>
-										</form>
-									</div>
-								</div>
-								<div class="col-md-6 col-sm-12 tm-contact-col">
-									<div class="tm-address-box">
-										<p>Aliquam interdum, nisl sedd faucibus tempor, massa velit laoreet ipsum, et faucibus sapien magna at enim. Suspendisse a dictum tortor.</p>
-										<p>Curabitur venenatis leo in augue convallis, vulputate sollicitudin ex maximus.</p>
-										<address>
-											120-240 Aliquam nec neque augue<br/>
-											Suspendisse tincidunt nunc,<br/>
-											vitae sagis justo 11000
-										</address>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>	
+                    #horizontal-waterfull:before,
+                    #horizontal-waterfull:after {
+                        content: '';
+                        display: table;
+                        clear: both;
+                    }
+
+                    #horizontal-waterfull img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .image-box {
+                        float: left;
+                        padding: 1px;
+                        overflow: hidden;
+                    }
+                </style>
+                <!-- section 3 案例-->
+                <section id="tm-section-3" class="tm-section tm-section-carousel">
+                    <div id="horizontal-waterfull">
+                    </div>
+                </section>
+
+                <!-- section 4 话题-->
+                <section id="tm-section-4" class="tm-section">
+                    <div class="row mb-4">
+                        <header class="col-xl-12">
+                            <h2 class="tm-text-shadow">Our Company</h2>
+                        </header>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                            <div class="media tm-bg-transparent-black tm-border-white">
+                                <i class="fab fa-apple tm-icon-circled tm-icon-media"></i>
+                                <div class="media-body">
+                                    <h3>HTML Templates</h3>
+                                    <p>We provide a variety of templates for you at no cost. Please spread a word about
+                                        <a href="https://plus.google.com/+tooplate" target="_parent">Tooplate</a>
+                                        website. Thank you.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                            <div class="media tm-bg-transparent-black tm-border-white">
+                                <i class="fas fa-map-pin mr-4 tm-icon-circled tm-icon-media"></i>
+                                <div class="media-body">
+                                    <h3>Free Images</h3>
+                                    <p>Photos by <a href="https://unsplash.com" target="_blank">Unsplash.com</a>
+                                        website, ac ornare arcu finibus sed. Aenean ultrices nisi sit amet facilisis
+                                        viverra.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                            <div class="media tm-bg-transparent-black tm-border-white">
+                                <i class="fab fa-fly mr-4 tm-icon-circled tm-icon-media"></i>
+                                <div class="media-body">
+                                    <h3>Phasellus eleifend</h3>
+                                    <p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices
+                                        nisi sit amet facilisis viverra.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                            <div class="media tm-bg-transparent-black tm-border-white">
+                                <i class="fab fa-linode mr-4 tm-icon-circled tm-icon-media"></i>
+                                <div class="media-body">
+                                    <h3>Phasellus eleifend</h3>
+                                    <p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices
+                                        nisi sit amet facilisis viverra.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                            <div class="media tm-bg-transparent-black tm-border-white">
+                                <i class="fab fa-linode mr-4 tm-icon-circled tm-icon-media"></i>
+                                <div class="media-body">
+                                    <h3>Phasellus eleifend</h3>
+                                    <p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices
+                                        nisi sit amet facilisis viverra.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                            <div class="media tm-bg-transparent-black tm-border-white">
+                                <i class="fab fa-linode mr-4 tm-icon-circled tm-icon-media"></i>
+                                <div class="media-body">
+                                    <h3>Phasellus eleifend</h3>
+                                    <p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices
+                                        nisi sit amet facilisis viverra.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                            <div class="media tm-bg-transparent-black tm-border-white">
+                                <i class="fab fa-linode mr-4 tm-icon-circled tm-icon-media"></i>
+                                <div class="media-body">
+                                    <h3>Phasellus eleifend</h3>
+                                    <p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices
+                                        nisi sit amet facilisis viverra.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                            <div class="media tm-bg-transparent-black tm-border-white">
+                                <i class="fab fa-linode mr-4 tm-icon-circled tm-icon-media"></i>
+                                <div class="media-body">
+                                    <h3>Phasellus eleifend</h3>
+                                    <p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices
+                                        nisi sit amet facilisis viverra.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                            <div class="media tm-bg-transparent-black tm-border-white">
+                                <i class="fab fa-linode mr-4 tm-icon-circled tm-icon-media"></i>
+                                <div class="media-body">
+                                    <h3>Phasellus eleifend</h3>
+                                    <p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices
+                                        nisi sit amet facilisis viverra.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- section 5 招募-->
+                <section id="tm-section-5" class="tm-section">
+                    <div class="tm-bg-transparent-black tm-contact-box-pad">
+                        <div class="row mb-4">
+                            <div class="col-sm-12">
+                                <header>
+                                    <h2 class="tm-text-shadow">Contact Us</h2>
+                                </header>
+                            </div>
+                        </div>
+                        <div class="row tm-page-4-content">
+                            <div class="col-md-6 col-sm-12 tm-contact-col">
+                                <div class="contact_message">
+                                    <form action="#contact" method="post" class="contact-form">
+                                        <div class="form-group">
+                                            <input type="text" id="contact_name" name="contact_name"
+                                                class="form-control" placeholder="Name" required="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" id="contact_email" name="contact_email"
+                                                class="form-control" placeholder="Email" required="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea id="contact_message" name="contact_message" class="form-control"
+                                                rows="9" placeholder="Message" required=""></textarea>
+                                        </div>
+                                        <button type="submit" class="btn tm-btn-submit tm-btn ml-auto">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 tm-contact-col">
+                                <div class="tm-address-box">
+                                    <p>Aliquam interdum, nisl sedd faucibus tempor, massa velit laoreet ipsum, et
+                                        faucibus sapien magna at enim. Suspendisse a dictum tortor.</p>
+                                    <p>Curabitur venenatis leo in augue convallis, vulputate sollicitudin ex maximus.
+                                    </p>
+                                    <address>
+                                        120-240 Aliquam nec neque augue<br />
+                                        Suspendisse tincidunt nunc,<br />
+                                        vitae sagis justo 11000
+                                    </address>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
 
-					<!-- section 6 联系-->
-					<section id="tm-section-6" class="tm-section">
-						<div class="ml-auto">
-							<header class="mb-4"><h1 class="tm-text-shadow">Constructive Design</h1></header>
-							<p class="mb-5 tm-font-big">Aenean fermentum vestibulum ipsum, ut pretium erat sodales sodales. Pellentesque quis orci vitae dui commodo sodales et ut quam. Etiam vitae egestas purus, ut malesuada enim.</p>
-							<a href="#" class="btn tm-btn tm-font-big" data-nav-link="#tmNavLink2">Continue...</a> 
-							<!-- data-nav-link holds the ID of nav item, which means this link should behave the same as that nav item  -->
-						</div>
-					</section>
-				
-				</div>	<!-- .tm-content -->							
-				
-			</div>	<!-- row -->			
-		</div>
-		
+                <!-- section 6 联系-->
+                <section id="tm-section-6" class="tm-section">
+                    <div class="ml-auto">
+                        <header class="mb-4">
+                            <h1 class="tm-text-shadow">Constructive Design</h1>
+                        </header>
+                        <p class="mb-5 tm-font-big">Aenean fermentum vestibulum ipsum, ut pretium erat sodales sodales.
+                            Pellentesque quis orci vitae dui commodo sodales et ut quam. Etiam vitae egestas purus, ut
+                            malesuada enim.</p>
+                        <a href="#" class="btn tm-btn tm-font-big" data-nav-link="#tmNavLink2">Continue...</a>
+                        <!-- data-nav-link holds the ID of nav item, which means this link should behave the same as that nav item  -->
+                    </div>
+                </section>
 
-		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-		<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
-		<script type="text/javascript" src="slick/slick.min.js"></script> <!-- Slick Carousel -->
+            </div> <!-- .tm-content -->
 
-		<script>
+        </div> <!-- row -->
+    </div>
 
-		var sidebarVisible = false;
-		// 首页
-		var currentPageID = "#tm-section-1";
 
-		// Setup Carousel
-		function setupCarousel() {
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script> <!-- Slick Carousel -->
+    <script type="text/javascript" src="js/ImagesLayout.js"></script>
+    <script>
+        var sidebarVisible = false;
+        // 首页
+        var currentPageID = "#tm-section-1";
 
-			// If current page isn't Carousel page, don't do anything.
-			if($('#tm-section-2').css('display') == "none") {
-			}
-			else {	// If current page is Carousel page, set up the Carousel.
+        // Setup Carousel
+        function setupCarousel() {
 
-				var slider = $('.tm-img-slider');
-				var windowWidth = $(window).width();
+            // If current page isn't Carousel page, don't do anything.
+            if ($('#tm-section-2').css('display') ==
+                "none") {} else { // If current page is Carousel page, set up the Carousel.
 
-				if (slider.hasClass('slick-initialized')) {
-					slider.slick('destroy');
-				}
+                var slider = $('.tm-img-slider');
+                var windowWidth = $(window).width();
 
-				if(windowWidth < 640) {
-					slider.slick({
-	              		dots: true,
-	              		infinite: false,
-	              		slidesToShow: 1,
-	              		slidesToScroll: 1
-	              	});
-				}
-				else if(windowWidth < 992) {
-					slider.slick({
-	              		dots: true,
-	              		infinite: false,
-	              		slidesToShow: 2,
-	              		slidesToScroll: 1
-	              	});
-				}
-				else {
-					// Slick carousel
-	              	slider.slick({
-	              		dots: true,
-	              		infinite: false,
-	              		slidesToShow: 3,
-	              		slidesToScroll: 2
-	              	});
-				}
+                if (slider.hasClass('slick-initialized')) {
+                    slider.slick('destroy');
+                }
 
-				// Init Magnific Popup
-				$('.tm-img-slider').magnificPopup({
-				  delegate: 'a', // child items selector, by clicking on it popup will open
-				  type: 'image',
-				  gallery: {enabled:true}
-				  // other options
-				});
-      		}
-  		}
+                if (windowWidth < 640) {
+                    slider.slick({
+                        dots: true,
+                        infinite: false,
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    });
+                } else if (windowWidth < 992) {
+                    slider.slick({
+                        dots: true,
+                        infinite: false,
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    });
+                } else {
+                    // Slick carousel
+                    slider.slick({
+                        dots: true,
+                        infinite: false,
+                        slidesToShow: 3,
+                        slidesToScroll: 2
+                    });
+                }
 
-  		// Setup Nav
-  		function setupNav() {
-  			// Add Event Listener to each Nav item
-	     	$(".tm-main-nav a").click(function(e){
-	     		e.preventDefault();
-		    	
-		    	var currentNavItem = $(this);
-		    	changePage(currentNavItem);
-		    	
-		    	setupCarousel();
-		    	setupFooter();
+                // Init Magnific Popup
+                $('.tm-img-slider').magnificPopup({
+                    delegate: 'a', // child items selector, by clicking on it popup will open
+                    type: 'image',
+                    gallery: {
+                        enabled: true
+                    }
+                    // other options
+                });
+            }
+        }
 
-		    	// Hide the nav on mobile
-		    	$("#tmSideBar").removeClass("show");
-		    });	    
-  		}
+        // Setup Nav
+        function setupNav() {
+            // 给导航条目添加点击事件
+            $(".tm-main-nav a").click(function (e) {
+                e.preventDefault();
 
-  		function changePage(currentNavItem) {
-  			// Update Nav items
-  			$(".tm-main-nav a").removeClass("active");
-     		currentNavItem.addClass("active");
+                var currentNavItem = $(this);
+                changePage(currentNavItem);
+                reqWorkimgs(currentNavItem);
+                setupCarousel();
+                setupFooter();
 
-	    	$(currentPageID).hide();
+                // Hide the nav on mobile
+                $("#tmSideBar").removeClass("show");
+            });
+        }
 
-	    	// Show current page
-	    	currentPageID = currentNavItem.data("page");
-	    	$(currentPageID).fadeIn(1000);
+        function changePage(currentNavItem) {
+            // Update Nav items
+            $(".tm-main-nav a").removeClass("active");
+            currentNavItem.addClass("active");
 
-	    	// Change background image
-	    	var bgImg = currentNavItem.data("bgImg");
-	    	$.backstretch("img/" + bgImg);		    	
-  		}
+            $(currentPageID).hide();
 
-  		// Setup Nav Toggle Button
-  		function setupNavToggle() {
+            // Show current page
+            currentPageID = currentNavItem.data("page");
+            $(currentPageID).fadeIn(1000);
 
-			$("#tmMainNavToggle").on("click", function(){
-				$(".sidebar").toggleClass("show");
-			});
-  		}
+            // Change background image
+            var bgImg = currentNavItem.data("bgImg");
+            $.backstretch("img/" + bgImg);
+        }
+        //请求案例图片
+        function reqWorkimgs(currentNavItem) {
+            var cPageID = currentNavItem.data("page");
+            if (cPageID == "#tm-section-3") {
+                var url = '/allImgs';
+                var data = {};
+                $.post(url, data).done(function (images) {
+                    const $box = document.getElementById('horizontal-waterfull')
+                    const layout = new ImagesLayout(images, $box.clientWidth, 2)
+                    layout.completedImages.forEach(item => {
+                        let $imageBox = document.createElement('div')
+                        $imageBox.setAttribute('class', 'image-box')
+                        $imageBox.style.width = item.width + 'px'
+                        $imageBox.style.height = item.height + 'px'
+                        let $image = document.createElement('img')
+                        $image.setAttribute('src', item.mainCasePhoto)
+                        $imageBox.appendChild($image)
+                        $box.appendChild($imageBox)
+                    })
+                })
+            }
+        }
 
-  		// If there is enough room, stick the footer at the bottom of page content.
-  		// If not, place it after the page content
-  		function setupFooter() {
-  			
-  			var padding = 100;
-  			var footerPadding = 40;
-  			var mainContent = $("section"+currentPageID);
-  			var mainContentHeight = mainContent.outerHeight(true);
-  			var footer = $(".footer-link");
-  			var footerHeight = footer.outerHeight(true);
-  			var totalPageHeight = mainContentHeight + footerHeight + footerPadding + padding;
-  			var windowHeight = $(window).height();		
+        // Setup Nav Toggle Button
+        function setupNavToggle() {
+            //点击导航图标
+            $("#tmMainNavToggle").on("click", function () {
+                $(".sidebar").toggleClass("show");
+            });
+        }
 
-  			if(totalPageHeight > windowHeight){
-  				$(".tm-content").css("margin-bottom", footerHeight + footerPadding + "px");
-  				footer.css("bottom", footerHeight + "px");  			
-  			}
-  			else {
-  				$(".tm-content").css("margin-bottom", "0");
-  				footer.css("bottom", "20px");  				
-  			}  			
-  		}
+        // If there is enough room, stick the footer at the bottom of page content.
+        // If not, place it after the page content
+        function setupFooter() {
 
-  		// Everything is loaded including images.
-      	$(window).on("load", function(){
+            var padding = 100;
+            var footerPadding = 40;
+            var mainContent = $("section" + currentPageID);
+            var mainContentHeight = mainContent.outerHeight(true);
+            var footer = $(".footer-link");
+            var footerHeight = footer.outerHeight(true);
+            var totalPageHeight = mainContentHeight + footerHeight + footerPadding + padding;
+            var windowHeight = $(window).height();
 
-      		// Render the page on modern browser only.
-      		if(renderPage) {
-				// Remove loader
-		      	$('body').addClass('loaded');
+            if (totalPageHeight > windowHeight) {
+                $(".tm-content").css("margin-bottom", footerHeight + footerPadding + "px");
+                footer.css("bottom", footerHeight + "px");
+            } else {
+                $(".tm-content").css("margin-bottom", "0");
+                footer.css("bottom", "20px");
+            }
+        }
 
-		      	// Page transition
-		      	var allPages = $(".tm-section");
+        // Everything is loaded including images.
+        $(window).on("load", function () {
 
-		      	// Handle click of "Continue", which changes to next page
-		      	// The link contains data-nav-link attribute, which holds the nav item ID
-		      	// Nav item ID is then used to access and trigger click on the corresponding nav item
-		      	var linkToAnotherPage = $("a.tm-btn[data-nav-link]");
-			    
-			    if(linkToAnotherPage != null) {
-			    	
-			    	linkToAnotherPage.on("click", function(){
-			    		var navItemToHighlight = linkToAnotherPage.data("navLink");
-			    		$("a" + navItemToHighlight).click();
-			    	});
-			    }
-		      	
-		      	// Hide all pages
-		      	allPages.hide();
+            // Render the page on modern browser only.
+            if (renderPage) {
+                // Remove loader
+                $('body').addClass('loaded');
 
-		      	$("#tm-section-1").fadeIn();
+                // Page transition
+                var allPages = $(".tm-section");
 
-		     	// Set up background first page
-		     	var bgImg = $("#tmNavLink1").data("bgImg");
-		     	
-		     	$.backstretch("img/" + bgImg, {fade: 500});
+                // Handle click of "Continue", which changes to next page
+                // The link contains data-nav-link attribute, which holds the nav item ID
+                // Nav item ID is then used to access and trigger click on the corresponding nav item
+                var linkToAnotherPage = $("a.tm-btn[data-nav-link]");
 
-		     	// Setup Carousel, Nav, and Nav Toggle
-			    setupCarousel();
-			    setupNav();
-			    setupNavToggle();
-			    setupFooter();
+                if (linkToAnotherPage != null) {
 
-			    // Resize Carousel upon window resize
-			    $(window).resize(function() {
-			    	setupCarousel();
-			    	setupFooter();
-			    });
-      		}	      	
-		});
+                    linkToAnotherPage.on("click", function () {
+                        var navItemToHighlight = linkToAnotherPage.data("navLink");
+                        $("a" + navItemToHighlight).click();
+                    });
+                }
 
-		</script>
-	</body>
+                // Hide all pages
+                allPages.hide();
+
+                $("#tm-section-1").fadeIn();
+
+                // Set up background first page
+                var bgImg = $("#tmNavLink1").data("bgImg");
+
+                $.backstretch("img/" + bgImg, {
+                    fade: 500
+                });
+
+                // Setup Carousel, Nav, and Nav Toggle
+                setupCarousel();
+                setupNav();
+                setupNavToggle();
+                setupFooter();
+
+                // Resize Carousel upon window resize
+                $(window).resize(function () {
+                    setupCarousel();
+                    setupFooter();
+                });
+            }
+        });
+    </script>
+</body>
+
 </html>
