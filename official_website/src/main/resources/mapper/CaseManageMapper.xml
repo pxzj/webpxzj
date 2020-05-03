@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jq.mapper.CaseManageMapper">
+	<!--
+		说明:
+		1.namespace是映射文件的唯一标识 不允许重复
+		2.在配置时应该和mybatis的客户端(Mapper接口文件)路径保持一致
+		3.映射文件中的Id,应该和接口方法名称一一对应
+	 -->
+<insert id="insertMainCase" parameterType="webCase">
+insert into web_case (sn_id,main_case_photo,height,width,project_name,project_area,end_date, 
+                     project_address,design_style,main_material,design_company,designer,
+                     assist_disigner,photographer,sales,created,updated) values (
+                     null,#{mainCasePhoto}, #{height}, #{width}, #{projectName}, #{projectArea}, #{endDate}, #{projectAddress},
+                      #{designStyle}, #{mainMaterial}, #{designCompany}, #{designer}, #{assistDisigner}, #{photographer},
+                      #{sales},now(),now())
+</insert>	
+
+<insert id="insertSubCase" parameterType="webSubCase">
+ insert into web_sub_case(main_case_id,sub_case_info,created,updated) values (#{mainCaseId}, #{subCaseInfo},now(),now())
+</insert>	
+
+</mapper>

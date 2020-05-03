@@ -13,5 +13,5 @@ public class TopicManageController {
 		return "newsadd";
     }
 	
-	
+	//TODO 话题insert数据库等案例测试通过在补充
 }

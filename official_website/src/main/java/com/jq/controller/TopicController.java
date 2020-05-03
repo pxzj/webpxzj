@@ -17,14 +17,14 @@ public class TopicController {
  @Autowired
 TopicService topicService;	
 	
-    @RequestMapping("/topic/selectAll")
+    @RequestMapping("/topic/findAll")
    public SysResult selectAll(){
    	
    	List<WebTopic>  webTopicList = topicService.selectAll();
    	return SysResult.success(webTopicList);
     }	
 	
-    @RequestMapping("/topic/selectTopicDetail/{topicId}")
+    @RequestMapping("/topic/findTopicDetail/{topicId}")
     public SysResult selectCaseDetailById(@PathVariable Long topicId){
    	 WebTopicDetail result = topicService.selectTopicDetailByTopicId(topicId);
    	 return SysResult.success(result);

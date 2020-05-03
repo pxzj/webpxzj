@@ -23,14 +23,14 @@ public class CaseController {
     @Autowired
     CaseService caseService;
 	
-     @RequestMapping("/case/selectAll")
+     @RequestMapping("/case/findAll")
     public SysResult selectAll(){
     	
     	List<WebCase>  mainCaseList = caseService.selectAll();
     	return SysResult.success(mainCaseList);
      }	
 	
-     @RequestMapping("/case/selectCaseDetail/{mainCaseId}")
+     @RequestMapping("/case/findCaseDetail/{mainCaseId}")
   public SysResult selectCaseDetailById(@PathVariable Long mainCaseId){
     	
     	 MainCaseDetail result = caseService.selectCaseDetailById(mainCaseId);
