@@ -10,9 +10,26 @@ public class IndexController {
 
 	@RequestMapping("/index")
 	public String index() {
-		ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index");
-        modelAndView.addObject("company", "纪青空间设计");
 		return "index";
+    }
+    @RequestMapping("/service")
+	public String service() {
+		return "service";
+    }
+    @RequestMapping("/work")
+	public String work() {
+		return "work";
+    }
+    @RequestMapping("/topic")
+	public String topic() {
+		return "topic";
+    }
+    @RequestMapping("/recuit")
+	public String recuit() {
+		return "recuit";
+    }
+    @RequestMapping("/contact")
+	public String contact() {
+		return "contact";
 	}
 }
