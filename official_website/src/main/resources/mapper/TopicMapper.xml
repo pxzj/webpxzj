@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jq.mapper.CaseMapper">
+<mapper namespace="com.jq.mapper.TopicMapper">
 	<!--
 		说明:
 		1.namespace是映射文件的唯一标识 不允许重复
@@ -11,12 +11,16 @@
 	 -->
 	
 	
-<select id="selectAll" resultType = "webCase">
-select * from web_case
+<select id="selectAll" resultType = "webTopic">
+select * from web_topic
 </select>
 
-<select id="selectSubCaseByMainCaseId"  resultType="webSubCase">
-select * from web_sub_case  where main_case_id = #{mainCaseId}
+<select id="selectOneByPK"  resultType="webTopic">
+select * from web_topic  where sn_id = #{topicId}
+</select>
+
+<select id="selectTopicDetatilByTopicId"  resultType="webTopicDetail">
+select * from web_topic_detail  where topic_id = #{topicId}
 </select>
 
 </mapper>
