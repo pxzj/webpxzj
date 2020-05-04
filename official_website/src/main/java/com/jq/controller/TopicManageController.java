@@ -5,15 +5,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class TopicManageController {
 
-	
-    @RequestMapping("/addnews")
+	//增加新闻
+    @RequestMapping("/manage/addnews")
     public String addnews() {
-        return "addnews";
+        return "manage/addnews";
     }
-    @RequestMapping("/managnews")
+    //新闻管理
+    @RequestMapping("/manage/managnews")
     public String managnews() {
-        return "managnews";
+        return "manage/managnews";
     }
 	
-	//TODO 话题insert数据库等案例测试通过在补充
 }
