@@ -53,10 +53,13 @@ public class IndexController {
             Map<String, Object> map) {
         ModelAndView success = new ModelAndView();
         if ("admin".equals(username) && "admin".equals(password)) {
-            success.setViewName("manage");
+            success.setViewName("addnews");
         } else{
-            success.setViewName("error");
+            success.setViewName("loginerror");
         }
         return success;
     }
+
+    
+
 }
