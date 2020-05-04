@@ -7,7 +7,7 @@ public class TopicManageController {
 
 	
     //话题新增
-    @RequestMapping("/manage/newsadd")
+    @RequestMapping("/newsadd")
 	public String topic() {
         
 		return "newsadd";
