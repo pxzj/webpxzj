@@ -43,23 +43,4 @@ public class IndexController {
         return "contact";
     }
 
-    @RequestMapping("/login")
-    public String login() {
-        return "login";
-    }
-
-    @RequestMapping("/loginadmin")
-    public ModelAndView loginadmin(@RequestParam("username") String username, @RequestParam("password") String password,
-            Map<String, Object> map) {
-        ModelAndView success = new ModelAndView();
-        if ("admin".equals(username) && "admin".equals(password)) {
-            success.setViewName("redirect:/manage/addnews");
-        } else{
-            success.setViewName("loginerror");
-        }
-        return success;
-    }
-
-    
-
 }

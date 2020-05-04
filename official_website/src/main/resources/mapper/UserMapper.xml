@@ -11,8 +11,8 @@
 	 -->
 	
 
-<select id="findUSer"  resultType="int">
- select count(*) from web_user where user_name = #{userName} and password = #{password}
+<select id="findUSer"  resultType="webUser">
+ select * from web_user limit 1
 </select>
 
 </mapper>

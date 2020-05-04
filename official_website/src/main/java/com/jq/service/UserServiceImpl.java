@@ -4,16 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jq.mapper.UserMapper;
+import com.jq.pojo.WebUser;
 @Service
 public class UserServiceImpl implements UserService {
 @Autowired
 UserMapper userMapper;	
 	@Override
-	public int findUSer(String userName, String password)  {
+	public WebUser findUSer()  {
 		
-	int result = userMapper.findUSer(userName, password);
+		WebUser  webUser = userMapper.findUSer();
  
-		return result;
+		return webUser;
 	}
 
 }

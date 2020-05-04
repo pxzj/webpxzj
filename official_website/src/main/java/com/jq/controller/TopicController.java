@@ -16,15 +16,16 @@ import com.jq.vo.SysResult;
 public class TopicController {
  @Autowired
 TopicService topicService;	
-	
-    @RequestMapping("/topic/findAll")
+	// 查询所有话题新闻
+    @RequestMapping("/findTopicAll")
    public SysResult selectAll(){
    	
    	List<WebTopic>  webTopicList = topicService.selectAll();
    	return SysResult.success(webTopicList);
     }	
 	
-    @RequestMapping("/topic/findTopicDetail/{topicId}")
+    // 查询某个话题新闻明细
+    @RequestMapping("/findTopicDetail/{topicId}")
     public SysResult selectCaseDetailById(@PathVariable Long topicId){
    	 WebTopicDetail result = topicService.selectTopicDetailByTopicId(topicId);
    	 return SysResult.success(result);

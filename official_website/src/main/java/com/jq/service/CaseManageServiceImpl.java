@@ -8,16 +8,18 @@ import com.jq.mapper.CaseManageMapper;
 import com.jq.pojo.WebCase;
 import com.jq.pojo.WebSubCase;
 @Service
-public class CaseManageServiceImpl implements CaseManageService {
+public class CaseManageServiceImpl implements CaseManageService {	
 @Autowired
 CaseManageMapper caseManageMapper;	
 
 	@Override
 	@Transactional 
 	public void addCase(WebCase webCase, String desc) {
-		caseManageMapper.insertMainCase(webCase);
+		
+      caseManageMapper.insertMainCase(webCase);
+      Long mainCaseId = webCase.getSnId();
         WebSubCase  webSubCase = new WebSubCase();
-        webSubCase.setMainCaseId(webCase.getSnId());
+        webSubCase.setMainCaseId(mainCaseId);
         webSubCase.setSubCaseInfo(desc);
         caseManageMapper.insertSubCase(webSubCase);
 	}

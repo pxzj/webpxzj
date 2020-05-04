@@ -9,7 +9,7 @@
 		2.在配置时应该和mybatis的客户端(Mapper接口文件)路径保持一致
 		3.映射文件中的Id,应该和接口方法名称一一对应
 	 -->
-<insert id="insertMainCase" parameterType="webCase">
+<insert id="insertMainCase" parameterType="webCase" useGeneratedKeys="true" keyProperty="snId" keyColumn = "sn_id">
 insert into web_case (sn_id,main_case_photo,height,width,project_name,project_area,end_date, 
                      project_address,design_style,main_material,design_company,designer,
                      assist_disigner,photographer,sales,created,updated) values (

@@ -1,13 +1,20 @@
 package com.jq.controller;
 
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.jq.constant.Constant;
+import com.jq.pojo.WebUser;
 import com.jq.service.UserService;
 import com.jq.vo.SysResult;
 
@@ -17,26 +24,33 @@ public class UserController {
 UserService userService;
 private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-
 // 登陆页面
-  @RequestMapping("/manage/login") 
-  public String home() {
+  @RequestMapping("/login") 
+  public String login() {
     
 	return "login";
    }
+    @RequestMapping("/loginadmin")
+    public ModelAndView loginadmin(@RequestParam("username") String username, @RequestParam("password") String password,
+            Map<String, Object> map, HttpServletRequest request) {
+        ModelAndView success = new ModelAndView();
+          WebUser webUser =  userService.findUSer();
+          
+         if(webUser == null){ 
+           success.setViewName("loginerror"); 
+           return success;
+         }    
+        if (webUser.getUserName().equals(username) && webUser.getPassword().equals(password)) {
+        	//TODO 重定向到一个管理系统?
+            success.setViewName("redirect:/manage/addnews");
+          //登录成功,把对象放在request域中
+        	request.getSession().setAttribute("webUser", webUser);
+        } else {
+            success.setViewName("loginerror");
+        }
+        
+        return success;
+    }
 
-	@RequestMapping("/manage/findUser")
-	@ResponseBody
-	//TODO 我这边链接? 还是前端通过returnCode来判断? 日志需要统一封装工具类
-	public SysResult findUser(String userName, String password){
-	   	int loginResult =  userService.findUSer(userName, password);
-	   	//输入账户或者密码有误
-	   	if(loginResult == 0){
-	   	logger.debug("username or password is error!! username = " + userName + ", password = " + password);
-	     return  SysResult.build(1,Constant.INSERT_USER_OR_PASSWORD_ERROR);
-	   	}
-	   	return SysResult.Success();
-	}
-	
 	
 }

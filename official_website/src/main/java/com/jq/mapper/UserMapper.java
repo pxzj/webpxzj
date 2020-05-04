@@ -1,7 +1,9 @@
 package com.jq.mapper;
 
+import com.jq.pojo.WebUser;
+
 public interface UserMapper {
 	
-	int findUSer(String userName, String password);
+	WebUser findUSer();
 
 }

@@ -23,19 +23,19 @@ public class CaseController {
     @Autowired
     CaseService caseService;
 	
-     @RequestMapping("/case/findAll")
+    //查询所有的主案例
+    @RequestMapping("/findCaseAll")
     public SysResult selectAll(){
     	
     	List<WebCase>  mainCaseList = caseService.selectAll();
     	return SysResult.success(mainCaseList);
      }	
-	
-     @RequestMapping("/case/findCaseDetail/{mainCaseId}")
+     //查询某个主案例下的明细 (restful格式传参)
+     @RequestMapping("/findCaseDetail/{mainCaseId}")
   public SysResult selectCaseDetailById(@PathVariable Long mainCaseId){
     	
     	 MainCaseDetail result = caseService.selectCaseDetailById(mainCaseId);
-    	 return SysResult.success(result);
-    	 
+    	 return SysResult.success(result); 
      }	
      @RequestMapping("/allImgs")
      public List<WebCase> allImgs(){

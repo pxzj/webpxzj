@@ -20,14 +20,15 @@ public class CaseManageController {
     @Autowired
 	CaseManageService caseManageService;
 	
+    // 新增案例页面
     @RequestMapping("/manage/addCasePage")
     public String addCasePage(){
     	
     	//TODO 待前端新增添加案例页面
-    	return "newsadd";
+    	return "manage/casesadd";
     }
     
-    
+    // 新增案例
 	@RequestMapping("/manage/addCase")
 	@ResponseBody
    public SysResult addCase(WebCase webCase, String desc){
@@ -36,7 +37,7 @@ public class CaseManageController {
 		caseManageService.addCase(webCase, desc);
 		}
 	   catch(Exception e){
-		   logger.error("insert error, e= " + e.getMessage());   
+		   logger.error("insert case error, e= " + e.getMessage());   
 		  return  SysResult.build(1, "addCase error!!");
 	   }
 		return SysResult.Success();

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jq.mapper.TopicManageMapper">
+	<!--
+		说明:
+		1.namespace是映射文件的唯一标识 不允许重复
+		2.在配置时应该和mybatis的客户端(Mapper接口文件)路径保持一致
+		3.映射文件中的Id,应该和接口方法名称一一对应
+	 -->
+<insert id="insertWebTopic" parameterType="webTopic" useGeneratedKeys="true" keyProperty="snId" keyColumn = "sn_id">
+insert into web_topic (sn_id,title,author,photographer,created,updated) values (
+                     null,#{title},#{author},#{photographer},now(),now())
+</insert>	
+
+<insert id="insertWebTopicDetail" parameterType="webTopicDetail">
+ insert into web_topic_detail(topic_id,topic_desc,created,updated) values (#{topicId}, #{topicDesc},now(),now())
+</insert>	
+
+</mapper>
