@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.jq.constant.Constant;
 import com.jq.pojo.WebCase;
 import com.jq.pojo.WebTopic;
 import com.jq.service.CaseManageService;
@@ -43,7 +44,7 @@ public class CaseManageController {
 		}
 	   catch(Exception e){
 		   logger.error("insert case error, e= " + e.getMessage());   
-		  return  SysResult.build(1, "addCase error!!");
+		  return  SysResult.build(Constant.ONE, "addCase error!!");
 	   }
 		return SysResult.Success();
 	}

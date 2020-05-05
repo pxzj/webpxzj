@@ -17,6 +17,9 @@ public class LoginInterceptorConfig implements WebMvcConfigurer{
 		   
 		   registration.addPathPatterns("/manage/**");
 		   registration.excludePathPatterns("/static/**");
+		   registration.excludePathPatterns("/**.png");
+		   registration.excludePathPatterns("/**.gif");
+		   registration.excludePathPatterns("/**.jpg");
 	}
 
 }

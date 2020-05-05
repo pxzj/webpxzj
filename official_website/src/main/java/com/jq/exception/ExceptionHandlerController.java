@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.jq.constant.Constant;
 import com.jq.vo.SysResult;
 
 /**
@@ -23,6 +24,6 @@ public class ExceptionHandlerController {
     public SysResult defaultExceptionHandler(HttpServletRequest request, Exception e)
             throws Exception {
     	logger.error("catch exception, e= " + e.getMessage());
-        return SysResult.build(1, "server error !!");
+        return SysResult.build(Constant.ONE, "server error !!");
     }
 }

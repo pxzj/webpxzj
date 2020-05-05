@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.jq.constant.Constant;
 import com.jq.pojo.WebTopic;
 import com.jq.service.TopicManageService;
 import com.jq.vo.EasyUIResult;
@@ -41,7 +42,7 @@ TopicManageService topicManageService;
     	topicManageService.addTopic(webTopic, desc);
     	} catch(Exception e){
     		logger.error("insert topic error, e= " + e.getMessage()); 
-    		return SysResult.build(1, " add topic fail!!");
+    		return SysResult.build(Constant.ONE, " add topic fail!!");
     	}
     	
     	return SysResult.Success();
