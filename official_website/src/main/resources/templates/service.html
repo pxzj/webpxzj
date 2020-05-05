@@ -66,7 +66,8 @@
 
 			<div id="fh5co-main">
 				<div class="fh5co-narrow-content">
-					<div class="row row-bottom-padded-md">
+                 <!--row row-bottom-padded-md-->
+					<div class=" row-bottom-padded-md">
 						<div class="col-md-4 animate-box " data-animate-effect="fadeInLeft">
 							<div class="js-fullheight font-center">
 								<center>
@@ -92,64 +93,9 @@
 							<div class="fh5co-narrow-content">
 								<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft"><center>设计范围</center></h2>
 								<h3 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft"><center>酒店   餐饮   店铺   文娱   办公   售楼处   样板间</center></h3>
-								<div class="row row-bottom-padded-md">
-									<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-										<a href="#" class="work image-popup" style="background-image: url(images/img-1.jpg);">
-											
-										</a>
-									</div>
-									<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-										<a href="#" class="work image-popup" style="background-image: url(images/img-2.jpg);">
-											
-										</a>
-									</div>
-									<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-										<a href="#" class="work image-popup" style="background-image: url(images/img-3.jpg);">
-											
-										</a>
-									</div>
-									<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-										<a href="#" class="work image-popup" style="background-image: url(images/img-4.jpg);">
-											
-										</a>
-									</div>
-									<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-										<a href="#" class="work image-popup" style="background-image: url(images/img-5.jpg);">
-											
-										</a>
-									</div>
-									<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-										<a href="#" class="work image-popup" style="background-image: url(images/img-6.jpg);">
-											
-										</a>
-									</div>
-									<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-										<a href="#" class="work image-popup" style="background-image: url(images/img-1.jpg);">
-											
-										</a>
-									</div>
-									<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-										<a href="#" class="work image-popup" style="background-image: url(images/img-2.jpg);">
-											
-										</a>
-									</div>
-									<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-										<a href="#" class="work image-popup" style="background-image: url(images/img-1.jpg);">
-										</a>
-									</div>
-									<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-										<a href="#" class="work image-popup" style="background-image: url(images/img-2.jpg);">
-											
-										</a>
-									</div>
-									<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-										<a href="#" class="work image-popup" style="background-image: url(images/img-3.jpg);">
-											
-										</a>
-									</div>
-									<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-										<a href="#" class="work image-popup" style="background-image: url(images/img-4.jpg);">
-											
+								<div class="row row-bottom-padded-md" id="app-service">
+									<div  v-for="item in imgs" class="col-md-3 col-sm-6 col-padding text-center animate-box">
+										<a href="#" class="work image-popup" :style="item.imgurl">
 										</a>
 									</div>
 								</div>
@@ -176,6 +122,45 @@
 
 		<!-- MAIN JS -->
 		<script src="js/main.js"></script>
-
+        <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+        var app4 = new Vue({
+            el: '#app-service',
+            data: {
+                imgs: [{
+                        imgurl: 'background-image: url(images/img-1.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-2.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-3.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-4.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-5.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-6.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-1.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-2.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-3.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-4.jpg);'
+                    },
+                ]
+            }
+        })
+    </script>
 	</body>
+    
 </html>

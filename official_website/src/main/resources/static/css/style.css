@@ -1217,3 +1217,6 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 	padding: 0 0;
 	margin: 0 0;
 }
+.grid-item{
+    height: 300px;
+}
