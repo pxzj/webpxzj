@@ -10,6 +10,7 @@ import com.jq.service.FileService;
 import com.jq.vo.PicUploadResult;
 
 @RestController
+@RequestMapping("/manage")
 public class FileController {
 
 
@@ -18,7 +19,7 @@ public class FileController {
 	
 	
 	//处理文件上传  {"error":0,"url":"图片的保存路径","width":图片的宽度,"height":图片的高度}
-	@RequestMapping("/manage/upload")
+	@RequestMapping("/upload")
 	public PicUploadResult uploadFile(MultipartFile  uploadFile){
 		
 		return fileService.uploadFile(uploadFile);

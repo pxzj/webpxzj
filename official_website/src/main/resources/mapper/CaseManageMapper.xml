@@ -22,4 +22,17 @@ insert into web_case (sn_id,main_case_photo,height,width,project_name,project_ar
  insert into web_sub_case(main_case_id,sub_case_info,created,updated) values (#{mainCaseId}, #{subCaseInfo},now(),now())
 </insert>	
 
+<select id="selectAllCase" resultType= "webCase">
+select * from web_case
+</select>
+
+<select id= "selectCaseCount" resultType="Integer">
+select count(*) from web_case
+
+</select>
+
+<select id="findCaseByPage" resultType= "webCase">
+select * from web_case limit #{begin},#{pageSize}
+</select>
+
 </mapper>

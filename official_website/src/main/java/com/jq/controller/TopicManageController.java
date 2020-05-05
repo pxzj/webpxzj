@@ -1,5 +1,7 @@
 package com.jq.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +11,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jq.pojo.WebTopic;
 import com.jq.service.TopicManageService;
+import com.jq.vo.EasyUIResult;
 import com.jq.vo.SysResult;
 @Controller
+@RequestMapping("/manage")
 public class TopicManageController {
 
 private Logger logger = LoggerFactory.getLogger(this.getClass());	
@@ -18,29 +22,54 @@ private Logger logger = LoggerFactory.getLogger(this.getClass());
 TopicManageService topicManageService;
 	
 	//增加新闻
-    @RequestMapping("/manage/addnews")
+    @RequestMapping("/addnews")
     public String addnews() {
         return "manage/addnews";
     }
     //新闻管理
-    @RequestMapping("/manage/managnews")
+    @RequestMapping("/managnews")
     public String managnews() {
         return "manage/managnews";
     }
     
-    @RequestMapping("/manage/topicAdd")
+    // 添加的新闻插入库
+    @RequestMapping("/addTopic")
     @ResponseBody
-    public SysResult topicAdd(WebTopic webTopic, String desc){
+    public SysResult addTopic(WebTopic webTopic, String desc){
     	
     	try{
     	topicManageService.addTopic(webTopic, desc);
     	} catch(Exception e){
     		logger.error("insert topic error, e= " + e.getMessage()); 
-    		return SysResult.build(1, "topic add fail!!");
+    		return SysResult.build(1, " add topic fail!!");
     	}
     	
     	return SysResult.Success();
     	
     }
-	
+    
+    // 支持查询所有的新闻
+    @RequestMapping("/findAllTopic")
+    @ResponseBody
+    public SysResult findAllTopic(){
+    	List<WebTopic> webTopicList =  topicManageService.findAllTopic();  
+    	return SysResult.success(webTopicList);
+    }
+    
+    // 支持分页查询所有的新闻
+    @RequestMapping("/findTopicByPage")
+    @ResponseBody
+    public EasyUIResult findTopicByPage(Integer pageNo, Integer rows){
+    	
+    	return  topicManageService.findTopicByPage(pageNo, rows);
+    }
+   
+    //TODO 回显更改的案例
+    
+    //TODO 更新编辑的新闻
+    
+    //  TODO 支持新闻的删除
+    
+    // TODO 支持新闻的批量删除
+      
 }
