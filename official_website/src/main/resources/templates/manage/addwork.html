@@ -37,6 +37,12 @@
 
     <!-- Modernizr JS -->
     <script src="../js/modernizr-2.6.2.min.js"></script>
+    <script src="../ckeditor/ckeditor.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            CKEDITOR.replace('description');
+        };
+    </script>
 </head>
 
 <body>
@@ -45,15 +51,15 @@
             <nav id="fh5co-main-menu" role="navigation">
                 <ul>
                     <li><a href="addnews">新闻增加</a></li>
-                    <li class="fh5co-active"><a href="managnews">新闻管理</a></li>
-                    <li ><a href="addwork">案例新增</a></li>
+                    <li><a href="managnews">新闻管理</a></li>
+                    <li class="fh5co-active"><a href="addwork">案例新增</a></li>
                 </ul>
             </nav>
         </aside>
     </div>
     <div id="fh5co-main">
         <div class="fh5co-narrow-content">
-            新闻管理
+            <textarea name="description" id="description" /></textarea>
         </div>
     </div>
 </body>

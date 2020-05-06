@@ -14,63 +14,71 @@ import com.jq.pojo.WebTopic;
 import com.jq.service.TopicManageService;
 import com.jq.vo.EasyUIResult;
 import com.jq.vo.SysResult;
+
 @Controller
 @RequestMapping("/manage")
 public class TopicManageController {
 
-private Logger logger = LoggerFactory.getLogger(this.getClass());	
-@Autowired	
-TopicManageService topicManageService;
-	
-	//增加新闻
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    @Autowired
+    TopicManageService topicManageService;
+
+    // 增加新闻
     @RequestMapping("/addnews")
     public String addnews() {
         return "manage/addnews";
     }
-    //新闻管理
+
+    // 新闻管理
     @RequestMapping("/managnews")
     public String managnews() {
         return "manage/managnews";
     }
-    
+
+    // 增加案例
+    @RequestMapping("/addwork")
+    public String addwork() {
+        return "manage/addwork";
+    }
+
     // 添加的新闻插入库
     @RequestMapping("/addTopic")
     @ResponseBody
-    public SysResult addTopic(WebTopic webTopic, String desc){
-    	
-    	try{
-    	topicManageService.addTopic(webTopic, desc);
-    	} catch(Exception e){
-    		logger.error("insert topic error, e= " + e.getMessage()); 
-    		return SysResult.build(Constant.ONE, " add topic fail!!");
-    	}
-    	
-    	return SysResult.Success();
-    	
+    public SysResult addTopic(WebTopic webTopic, String desc) {
+
+        try {
+            topicManageService.addTopic(webTopic, desc);
+        } catch (Exception e) {
+            logger.error("insert topic error, e= " + e.getMessage());
+            return SysResult.build(Constant.ONE, " add topic fail!!");
+        }
+
+        return SysResult.Success();
+
     }
-    
+
     // 支持查询所有的新闻
     @RequestMapping("/findAllTopic")
     @ResponseBody
-    public SysResult findAllTopic(){
-    	List<WebTopic> webTopicList =  topicManageService.findAllTopic();  
-    	return SysResult.success(webTopicList);
+    public SysResult findAllTopic() {
+        List<WebTopic> webTopicList = topicManageService.findAllTopic();
+        return SysResult.success(webTopicList);
     }
-    
+
     // 支持分页查询所有的新闻
     @RequestMapping("/findTopicByPage")
     @ResponseBody
-    public EasyUIResult findTopicByPage(Integer pageNo, Integer rows){
-    	
-    	return  topicManageService.findTopicByPage(pageNo, rows);
+    public EasyUIResult findTopicByPage(Integer pageNo, Integer rows) {
+
+        return topicManageService.findTopicByPage(pageNo, rows);
     }
-   
-    //TODO 回显更改的案例
-    
-    //TODO 更新编辑的新闻
-    
-    //  TODO 支持新闻的删除
-    
+
+    // TODO 回显更改的案例
+
+    // TODO 更新编辑的新闻
+
+    // TODO 支持新闻的删除
+
     // TODO 支持新闻的批量删除
-      
+
 }
