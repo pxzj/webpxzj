@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.jq.constant.Constant;
 import com.jq.pojo.WebCase;
@@ -25,17 +26,17 @@ public class CaseController {
 	
     //查询所有的主案例
     @RequestMapping("/findCaseAll")
-    public SysResult selectAll(){
-    	
-    	List<WebCase>  mainCaseList = caseService.selectAll();
-    	return SysResult.success(mainCaseList);
+    public List<WebCase> selectAll(){
+     return caseService.selectAll();
      }	
      //查询某个主案例下的明细 (restful格式传参)
      @RequestMapping("/findCaseDetail/{mainCaseId}")
-  public SysResult selectCaseDetailById(@PathVariable Long mainCaseId){
-    	
-    	 MainCaseDetail result = caseService.selectCaseDetailById(mainCaseId);
-    	 return SysResult.success(result); 
+  public ModelAndView selectCaseDetailById(@PathVariable Long mainCaseId){
+    	 ModelAndView modelAndView = new ModelAndView();
+    	 MainCaseDetail mainCaseDetail = caseService.selectCaseDetailById(mainCaseId);
+    	 modelAndView.addObject("mainCaseDetail", mainCaseDetail);
+    	 modelAndView.setViewName("workdetail");
+    	 return modelAndView;
      }	
      @RequestMapping("/allImgs")
      public List<WebCase> allImgs(){

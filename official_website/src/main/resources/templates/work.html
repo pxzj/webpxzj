@@ -139,7 +139,7 @@
     <script>
         //请求案例图片
         function reqWorkimgs() {
-            var url = '/allImgs';
+            var url = '/findCaseAll';
             var data = {};
             $.post(url, data).done(function (images) {
                 const $box = document.getElementById('horizontal-waterfull')
@@ -162,7 +162,7 @@
                 for (var i = 0; i < imagebox.length; i++) {
                     let j = i
                     imagebox[j].onclick = function (e) {
-                        $(location).attr('href', 'workdetail?snId=' + images[j].snId);
+                        $(location).attr('href', '/findCaseDetail/' + images[j].snId);
                     }
                 }
 

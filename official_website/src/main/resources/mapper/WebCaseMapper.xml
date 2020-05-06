@@ -19,4 +19,8 @@ select * from web_case
 select * from web_sub_case  where main_case_id = #{mainCaseId}
 </select>
 
+
+<select id="selectOneByPK"  resultType="webCase">
+select * from web_case  where sn_id = #{mainCaseId}
+</select>
 </mapper>

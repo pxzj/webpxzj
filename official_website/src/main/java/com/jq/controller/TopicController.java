@@ -3,9 +3,11 @@ package com.jq.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.jq.pojo.WebTopic;
 import com.jq.pojo.WebTopicDetail;
@@ -16,19 +18,23 @@ import com.jq.vo.SysResult;
 public class TopicController {
  @Autowired
 TopicService topicService;	
-	// 查询所有话题新闻
-    @RequestMapping("/findTopicAll")
-   public SysResult selectAll(){
-   	
-   	List<WebTopic>  webTopicList = topicService.selectAll();
-   	return SysResult.success(webTopicList);
-    }	
-	
+ 
+ @RequestMapping("/topic")
+ public String topic(Model model) {
+ // 查询所有话题新闻	 
+List<WebTopic>  webTopicList = topicService.selectAll();
+ model.addAttribute("webTopicList", webTopicList);
+	 
+     return "topic";
+ }
     // 查询某个话题新闻明细
     @RequestMapping("/findTopicDetail/{topicId}")
-    public SysResult selectCaseDetailById(@PathVariable Long topicId){
-   	 WebTopicDetail result = topicService.selectTopicDetailByTopicId(topicId);
-   	 return SysResult.success(result);
+    public ModelAndView  selectCaseDetailById(@PathVariable Long topicId){
+    	ModelAndView modelAndView = new ModelAndView();
+   	 WebTopicDetail webTopicDetail = topicService.selectTopicDetailByTopicId(topicId);
+   	modelAndView.addObject("webTopicDetail", webTopicDetail);
+   	modelAndView.setViewName("topicdetail");
+   	 return modelAndView;
     }	
     
 }
