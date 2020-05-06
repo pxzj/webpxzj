@@ -69,7 +69,6 @@
     <div id="fh5co-main">
         <div class="fh5co-narrow-content">
             <div id="editor">
-                <p>欢迎使用富文本编辑器</p>
             </div>
 
             <p><button class="btn btn-primary btn-lg" id="btnGenCode" role="button">保存 »</button></p>
@@ -90,6 +89,11 @@
     // 将图片大小限制为 3M
     editor.customConfig.uploadImgMaxSize = 3 * 1024 * 1024
     editor.create()
+    document.getElementById('btnGenCode').addEventListener('click', function () {
+        // 读取 html
+        alert(editor.txt.html())
+    }, false)
+
 </script>
 
 </html>
