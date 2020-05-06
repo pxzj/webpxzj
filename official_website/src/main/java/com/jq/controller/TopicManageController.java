@@ -30,9 +30,9 @@ public class TopicManageController {
     }
 
     // 新闻管理
-    @RequestMapping("/managnews")
+    @RequestMapping("/manage")
     public String managnews() {
-        return "manage/managnews";
+        return "manage/manage";
     }
 
     // 增加案例
