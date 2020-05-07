@@ -45,38 +45,32 @@
             <nav id="fh5co-main-menu" role="navigation">
                 <ul>
                     <li class="fh5co-active"><a href="manage">管理页面</a></li>
-                    <li><a href="addnews">新闻增加</a></li>
-                    <li><a href="addwork">案例新增</a></li>
                 </ul>
             </nav>
         </aside>
     </div>
     <div id="fh5co-main">
         <div class="fh5co-narrow-content">
-            <div>
-                <p1>新闻管理<p1>
-                        <div v-for="item in news" class="col-md-3 col-sm-6 col-padding text-center animate-box">
+            <div class="row-bottom-padded-md">
+                <a href="addnews">
+                    <h1>新闻增加</h1>
+                </a>
+                <div v-for="item in news" class="col-md-3 col-sm-6 col-padding text-center animate-box">
 
-                        </div>
-            </div>
-            <div>
-                <p1>案例管理<p1>
-                        <div v-for="item in topics" class="col-md-3 col-sm-6 col-padding text-center animate-box">
+                </div>
+                <br/>
+                </border>
+                <a href="addwork">
+                    <h1>案例新增</h1>
+                </a>
+                <div v-for="item in topics" class="col-md-3 col-sm-6 col-padding text-center animate-box">
 
-                        </div>
+                </div>
             </div>
+
         </div>
     </div>
-    <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
-    <script>
-        var app4 = new Vue({
-            el: '#fh5co-main',
-            data: {
-                news: [],
-                topics: []
-            }
-        })
-    </script>
+
 </body>
 
 </html>
