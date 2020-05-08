@@ -42,7 +42,7 @@ private Logger logger = LoggerFactory.getLogger(this.getClass());
          }    
         if (webUser.getUserName().equals(username) && webUser.getPassword().equals(password)) {
         	//TODO 重定向到一个管理系统?
-            success.setViewName("redirect:/manage/addnews");
+            success.setViewName("redirect:/manage/manage");
           //登录成功,把对象放在request域中
         	request.getSession().setAttribute("webUser", webUser);
         } else {

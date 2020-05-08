@@ -46,7 +46,7 @@
     <!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-    
+
 </head>
 
 <body>
@@ -133,21 +133,30 @@
     <!-- MAIN JS -->
     <script src="js/main.js"></script>
     <script>
-        var app4 = new Vue({
-            el: '#app-index',
-            data: {
-                imgs: [{
-                        imgurl: 'background-image: url(images/img_bg_1.jpg);'
-                    },
-                    {
-                        imgurl: 'background-image: url(images/img_bg_2.jpg);'
-                    },
-                    {
-                        imgurl: 'background-image: url(images/img_bg_3.jpg);'
-                    },
-                ]
-            }
-        })
+        function reqWorkimgs() {
+            var url = '/findCaseAll';
+            var data = {};
+            $.post(url, data).done(function (images) {
+                var app4 = new Vue({
+                    el: '#app-index',
+                    data: {
+                        imgs: [{
+                                imgurl: 'background-image: url(images/img_bg_1.jpg);'
+                            },
+                            {
+                                imgurl: 'background-image: url(images/img_bg_2.jpg);'
+                            },
+                            {
+                                imgurl: 'background-image: url(images/img_bg_3.jpg);'
+                            },
+                        ]
+                    }
+                })
+
+            })
+        }
+        reqWorkimgs();
     </script>
 </body>
+
 </html>

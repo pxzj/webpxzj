@@ -48,6 +48,7 @@ public class IndexController {
     public ModelAndView workdetail(@RequestParam("snId") String snId) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("id", snId);
+        modelAndView.addObject("htmlcontent", "<p>显示编辑出来的案例详细</p>");
         modelAndView.setViewName("workdetail");
         return modelAndView;
     }

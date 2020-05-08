@@ -43,9 +43,15 @@
 </head>
 
 <body>
-    
-    <div id="div1">
+    <div id="div1" class="toolbar">
+        <p> 案例入口图片 </p>
     </div>
+    <div style="padding: 5px 0; color: #ccc">案例详情</div>
+    <div id="div2" class="text">
+        <p></p>
+    </div>
+
+
     <button id="btn1">获取html</button>
     <button id="btn2">获取text</button>
 
@@ -54,6 +60,11 @@
         var E = window.wangEditor
         var editor = new E('#div1')
         editor.create()
+
+
+        var editor2 = new E('#div2')
+        editor2.create()
+
 
         document.getElementById('btn1').addEventListener('click', function () {
             // 读取 html
