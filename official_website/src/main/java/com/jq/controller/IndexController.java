@@ -28,12 +28,7 @@ public class IndexController {
     public String work() {
         return "work";
     }
-
-    @RequestMapping("/topic")
-    public String topic() {
-        return "topic";
-    }
-
+    
     @RequestMapping("/recuit")
     public String recuit() {
         return "recuit";
