@@ -19,14 +19,7 @@ public class TopicController {
  @Autowired
 TopicService topicService;	
  
- @RequestMapping("/topic")
- public String topic(Model model) {
- // 查询所有话题新闻	 
-List<WebTopic>  webTopicList = topicService.selectAll();
- model.addAttribute("webTopicList", webTopicList);
-	 
-     return "topic";
- }
+
     // 查询某个话题新闻明细
     @RequestMapping("/findTopicDetail/{topicId}")
     public ModelAndView  selectCaseDetailById(@PathVariable Long topicId){

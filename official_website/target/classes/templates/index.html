@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js">
+<html xmlns:th="http://www.thymeleaf.org">
 <!--<![endif]-->
 
 <head>
@@ -95,7 +95,9 @@
                         <aside id="fh5co-hero" class="js-fullheight">
                             <div id="app-index" class="flexslider js-fullheight">
                                 <ul class="slides">
-                                    <li v-for="img in imgs" :style="img.imgurl">
+                                    <li th:each="img:${imgs}" th:style="${img.imgurl}"
+                                        th:onclick = "'javascript : goDetail(\'' + ${ img.snId } + '\')'"
+                                        >
                                         <div class="overlay"></div>
                                         <div class="container-fluid">
                                             <div class="row">
@@ -128,34 +130,13 @@
     <script src="js/jquery.waypoints.min.js"></script>
     <!-- Flexslider -->
     <script src="js/jquery.flexslider-min.js"></script>
-    <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
 
     <!-- MAIN JS -->
     <script src="js/main.js"></script>
     <script>
-        function reqWorkimgs() {
-            var url = '/findCaseAll';
-            var data = {};
-            $.post(url, data).done(function (images) {
-                var app4 = new Vue({
-                    el: '#app-index',
-                    data: {
-                        imgs: [{
-                                imgurl: 'background-image: url(images/img_bg_1.jpg);'
-                            },
-                            {
-                                imgurl: 'background-image: url(images/img_bg_2.jpg);'
-                            },
-                            {
-                                imgurl: 'background-image: url(images/img_bg_3.jpg);'
-                            },
-                        ]
-                    }
-                })
-
-            })
+        function goDetail(id) {
+            $(location).attr('href', '/findCaseDetail/' + id);
         }
-        reqWorkimgs();
     </script>
 </body>
 

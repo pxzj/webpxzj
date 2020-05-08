@@ -30,8 +30,8 @@ public class WebCase implements Serializable{
 	 private String sales;// 营销顾问
 	 private Timestamp created;// 创建时间
 	 private Timestamp updated;// 更新时间
-
-	 
+    // 非数据库字段，仅页面使用
+	 public String imgurl;
 	public Long getSnId() {
 		return snId;
 	}
