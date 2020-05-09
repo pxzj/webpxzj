@@ -24,7 +24,6 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/mycdit.css">
     <!-- jQuery -->
     <script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -40,22 +39,108 @@
     <script src="https://cdn.staticfile.org/codemirror/5.38.0/mode/xml/xml.min.js"></script>
     <!--富文本编辑器wangEditor-->
     <script src="https://cdn.staticfile.org/wangEditor/10.0.13/wangEditor.min.js"></script>
+
 </head>
 
 <body>
-    <div id="div1" class="toolbar">
-        <p> 案例入口图片 </p>
-    </div>
-    <div style="padding: 5px 0; color: #ccc">案例详情</div>
-    <div id="div2" class="text">
-        <p></p>
-    </div>
+    <style>
+        fieldset {
+            background-color: #f1f1f1;
+            border: none;
+            border-radius: 2px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            padding: 0 .625em;
+        }
+
+        label {
+            cursor: pointer;
+            display: inline-block;
+            padding: 3px 6px;
+            text-align: right;
+            width: 150px;
+            vertical-align: top;
+        }
+
+        p {
+            display: inline;
+            padding: 20px 0 ;
+        }
+
+        input {
+            font-size: inherit;
+            width: 20rem;
+        }
+    </style>
+    <form th:action="@{/manage/addCase}" method="post">
+        <fieldset>
+            <div class="form-inline form-group">
+                <p>
+                    <label>项目名称:</label>
+                    <input name="projectName" type="text" align="left">
+                </p>
+                <p>
+                    <label>项目面积:</label>
+                    <input name="projectArea" type="text" align="left">
+                </p>
+            </div>
+            <div class="form-inline form-group">
+                <p>
+                    <label>项目结束时间:</label>
+                    <input name="endDate" type="date" align="left">
+                </p>
+                <p>
+                    <label>设计风格:</label>
+                    <input name="designStyle" type="text" align="left">
+                </p>
+            </div>
+            <div class="form-inline form-group">
+                <p>
+                    <label>主要材料:</label>
+                    <input name="mainMaterial" type="text" align="left">
+                </p>
+                <p>
+                    <label>设计单位:</label>
+                    <input name="designCompany" type="text" align="left">
+                </p>
+            </div>
+            <div class="form-inline form-group">
+                <p>
+                    <label>设计师:</label>
+                    <input name="designer" type="text" align="left">
+                </p>
+                <p>
+                    <label>辅助设计师:</label>
+                    <input name="assistDisigner" type="text" align="left">
+                </p>
+            </div>
+            <div class="form-inline form-group">
+                <p>
+                    <label>摄影师:</label>
+                    <input name="photographer" type="text" align="left">
+                </p>
+                <p>
+                    <label>营销顾问:</label>
+                    <input name="sales" type="text" align="left">
+                </p>
+            </div>
+            <div id="div1" class="toolbar">
+                <p> 案例入口图片 </p>
+            </div>
+            <div style="padding: 5px 0; color: #ccc">案例详情</div>
+            <div id="div2" class="text">
+            </div>
+
+            <a href="manage/addCase" target="_self">
+                <h1><button>提交</button></h1>
+            </a>
+        </fieldset>
+    </form>
 
 
-    <button id="btn1">获取html</button>
-    <button id="btn2">获取text</button>
 
-    <script type="text/javascript" src="/wangEditor.min.js"></script>
+
+
     <script type="text/javascript">
         var E = window.wangEditor
         var editor = new E('#div1')
@@ -64,17 +149,6 @@
 
         var editor2 = new E('#div2')
         editor2.create()
-
-
-        document.getElementById('btn1').addEventListener('click', function () {
-            // 读取 html
-            alert(editor.txt.html())
-        }, false)
-
-        document.getElementById('btn2').addEventListener('click', function () {
-            // 读取 text
-            alert(editor.txt.text())
-        }, false)
     </script>
 </body>
 <script type="text/javascript">
