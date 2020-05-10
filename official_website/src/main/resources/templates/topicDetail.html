@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>纪青空间设计</title>
+    <style type="text/css">
+        .body {
+            width: 800px;
+            margin: 0 auto; 
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <span th:text="'案例ID：'+ ${id}" />
+        <div th:utext="${htmlcontent}">
+        </div>
+    </div>
+</body>
+
+</html>

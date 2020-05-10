@@ -64,7 +64,7 @@
 
         p {
             display: inline;
-            padding: 20px 0 ;
+            padding: 20px 0;
         }
 
         input {
@@ -80,7 +80,7 @@
                     <input name="projectName" type="text" align="left">
                 </p>
                 <p>
-                    <label>项目面积:</label>
+                    <label>话题作者:</label>
                     <input name="projectArea" type="text" align="left">
                 </p>
             </div>
@@ -123,9 +123,18 @@
                     <label>营销顾问:</label>
                     <input name="sales" type="text" align="left">
                 </p>
+
+
             </div>
-            <div id="div1" class="toolbar">
-                <p> 案例入口图片 </p>
+
+            <div class="form-inline form-group">
+                <p>
+                    <label>入口图片:</label>
+                    <input type="file" name="file" onchange="changepic(this)" id="file" class="inputfile" />
+                </p>
+                <p>
+                    <img src="" id="show" width="200">
+                </p>
             </div>
             <div style="padding: 5px 0; color: #ccc">案例详情</div>
             <div id="div2" class="text">
@@ -137,22 +146,22 @@
         </fieldset>
     </form>
 
-
-
-
-
     <script type="text/javascript">
+        //图片预览
+        function changepic() {
+            var reads = new FileReader();
+            f = document.getElementById('file').files[0];
+            reads.readAsDataURL(f);
+            reads.onload = function (e) {
+                document.getElementById('show').src = this.result;
+            };
+
+        }
         var E = window.wangEditor
-        var editor = new E('#div1')
-        editor.create()
-
-
         var editor2 = new E('#div2')
         editor2.create()
     </script>
 </body>
-<script type="text/javascript">
 
-</script>
 
 </html>

@@ -72,11 +72,10 @@
                 <div class=" row-bottom-padded-md">
                     <div class="col-md-4 animate-box " data-animate-effect="fadeInLeft">
                         <div class="js-fullheight font-center">
-
-                            <div th:each="topic:${topics}">
-                                <a  th:text="${topic.title}"/><br/>
-                            </div>
-
+                            <ul class="slides">
+                                <li th:each="topic:${topics}" th:text="${topic.title}"
+                                    th:onclick="'javascript : goDetail(\'' + ${ topic.snId } + '\')'" />
+                            </ul>
                         </div>
                     </div>
                     <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
@@ -119,7 +118,11 @@
 
     <!-- MAIN JS -->
     <script src="js/main.js"></script>
-
+<script>
+        function goDetail(id) {
+            $(location).attr('href', '/findTopicDetail/' + id);
+        }
+    </script>
 </body>
 
 </html>

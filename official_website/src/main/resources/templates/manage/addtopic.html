@@ -24,7 +24,6 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/mycdit.css">
     <!-- jQuery -->
     <script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -40,34 +39,88 @@
     <script src="https://cdn.staticfile.org/codemirror/5.38.0/mode/xml/xml.min.js"></script>
     <!--富文本编辑器wangEditor-->
     <script src="https://cdn.staticfile.org/wangEditor/10.0.13/wangEditor.min.js"></script>
+
 </head>
 
 <body>
-    话题标题:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="projectName" type="text" /><br />
-    <div id="div1">
-    </div>
-    <button id="btn1">获取html</button>
-    <button id="btn2">获取text</button>
+    <style>
+        fieldset {
+            background-color: #f1f1f1;
+            border: none;
+            border-radius: 2px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            padding: 0 .625em;
+        }
 
-    <script type="text/javascript" src="/wangEditor.min.js"></script>
+        label {
+            cursor: pointer;
+            display: inline-block;
+            padding: 3px 6px;
+            text-align: right;
+            width: 150px;
+            vertical-align: top;
+        }
+
+        p {
+            display: inline;
+            padding: 20px 0;
+        }
+
+        input {
+            font-size: inherit;
+            width: 20rem;
+        }
+    </style>
+    <form th:action="@{/manage/addTopic}" method="post">
+        <fieldset>
+            <div class="form-inline form-group">
+                <p>
+                    <label>话题标题:</label>
+                    <input name="title" type="text" align="left">
+                </p>
+                <p>
+                    <label>话题作者:</label>
+                    <input name="author" type="text" align="left">
+                </p>
+            </div>
+            <div class="form-inline form-group">
+                <p>
+                    <label>摄影师:</label>
+                    <input name="photographer" type="text" align="left">
+                </p>
+
+            </div>
+            <div style="padding: 5px 0; color: #ccc">话题详情</div>
+            <div id="div2" class="text">
+            </div>
+            <input id="desc" name="desc"  type="hidden"/>
+            <a href="manage/addTopic" target="_self">
+                <h1><button>提交</button></h1>
+            </a>
+        </fieldset>
+    </form>
+
     <script type="text/javascript">
+        //图片预览
+        function changepic() {
+            var reads = new FileReader();
+            f = document.getElementById('file').files[0];
+            reads.readAsDataURL(f);
+            reads.onload = function (e) {
+                document.getElementById('show').src = this.result;
+            };
+
+        }
         var E = window.wangEditor
-        var editor = new E('#div1')
-        editor.create()
-
-        document.getElementById('btn1').addEventListener('click', function () {
-            // 读取 html
-            alert(editor.txt.html())
-        }, false)
-
-        document.getElementById('btn2').addEventListener('click', function () {
-            // 读取 text
-            alert(editor.txt.text())
-        }, false)
+        var editor2 = new E('#div2')
+        editor2.customConfig.onchange = function (html) {
+            var  desc = document.getElementById('desc')
+            desc.value = html
+        }
+        editor2.create()
     </script>
 </body>
-<script type="text/javascript">
 
-</script>
 
 </html>
