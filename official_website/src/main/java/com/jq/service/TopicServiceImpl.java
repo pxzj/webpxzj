@@ -10,11 +10,14 @@ import org.springframework.stereotype.Service;
 import com.jq.mapper.TopicMapper;
 import com.jq.pojo.WebTopic;
 import com.jq.pojo.WebTopicDetail;
+import com.jq.vo.TopicInfomation;
 
 @Service
 public class TopicServiceImpl implements TopicService{
 @Autowired
 TopicMapper topicMapper;	
+@Autowired
+TopicInfomation topicInfomation;
 private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Override
@@ -24,16 +27,20 @@ private Logger logger = LoggerFactory.getLogger(this.getClass());
 	}
 
 	@Override
-	public WebTopicDetail selectTopicDetailByTopicId(Long topicId) {
-	
-		logger.info("selectTopicDetailByTopicId start!! topicId = " + topicId);  
-		
+	public TopicInfomation selectTopicDetailByTopicId(Long topicId) {
+		// 查询话题表
+		WebTopic webTopic = topicMapper.selectTopicById(topicId);
+	       if(webTopic == null){
+				logger.debug("query webTopic no record, topicId = " + topicId);  
+			 } 
+	       topicInfomation.setWebTopic(webTopic);
+		// 查询话题明细表
 		WebTopicDetail  webTopicDetail = topicMapper.selectTopicDetatilByTopicId(topicId);
 		 if(webTopicDetail == null){
-			logger.debug("query web_topic_detail no record,mainCaseId = " + topicId);  
-		 }
-		 logger.info("selectTopicDetailByTopicId end!! webTopicDetail = " + webTopicDetail);  
-		return webTopicDetail;
+			logger.debug("query web_topic_detail no record, topicId = " + topicId);  
+		 }  
+		 topicInfomation.setWebTopicDetail(webTopicDetail);
+		return topicInfomation;
 		
 	}
 

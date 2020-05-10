@@ -1,6 +1,7 @@
 package com.jq.pojo;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class WebTopic implements Serializable {
@@ -14,7 +15,7 @@ public class WebTopic implements Serializable {
     private Long snId;// 自增主键
     private String title;// 话题标题
     private String author;// 话题作者
-    private String photographer;// 摄影师
+    private Date workDate;// 摄影师
     private Timestamp created;// 创建时间
     private Timestamp updated;// 更新时间
 	public Long getSnId() {
@@ -35,11 +36,12 @@ public class WebTopic implements Serializable {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public String getPhotographer() {
-		return photographer;
+
+	public Date getWorkDate() {
+		return workDate;
 	}
-	public void setPhotographer(String photographer) {
-		this.photographer = photographer;
+	public void setWorkDate(Date workDate) {
+		this.workDate = workDate;
 	}
 	public Timestamp getCreated() {
 		return created;
@@ -55,7 +57,7 @@ public class WebTopic implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "WebTopic [snId=" + snId + ", title=" + title + ", author=" + author + ", photographer=" + photographer
+		return "WebTopic [snId=" + snId + ", title=" + title + ", author=" + author + ", workDate=" + workDate
 				+ ", created=" + created + ", updated=" + updated + "]";
 	}
 

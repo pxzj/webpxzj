@@ -13,8 +13,8 @@
 </head>
 <body>
     <div class="body">
-        <span th:text="'案例ID：'+ ${webTopicDetail.topicId}" />
-        <div th:utext="${webTopicDetail.topicDesc}">
+           <span th:text="'话题作者|'+ ${topicInfomation.webTopic.title}" />
+        <div th:utext="${topicInfomation.webTopicDetail.topicDesc}">
         </div>
     </div>
 </body>

@@ -17,6 +17,9 @@ public interface TopicMapper {
 	 /*查询话题下的明细图文*/ 
 	WebTopicDetail selectTopicDetatilByTopicId(Long topicId);
 	
+	/*查询话题表获取作者和发布时间*/
+	WebTopic selectTopicById(Long topicId);
+	
 	
 
 }

@@ -195,7 +195,7 @@
             xhr.addEventListener("load", uploadComplete, false);
             xhr.addEventListener("error", uploadFailed, false);
             xhr.addEventListener("abort", uploadCanceled, false);
-            xhr.open("POST", "/manage/upload1"); //修改成自己的接口
+            xhr.open("POST", "/manage/upload"); //修改成自己的接口
             xhr.send(fd);
         }
 
@@ -241,10 +241,6 @@
         editor2.customConfig.uploadImgServer = '/manage/upload'
         //配置指定文件名
         editor2.customConfig.uploadFileName = 'file'
-        //传一个目录名称过去,作为图片服务器上的子目录
-        editor2.customConfig.uploadImgParams = {
-            dir: 'news'
-        }
         editor2.customConfig.uploadImgMaxLength = 5
         editor2.customConfig.uploadImgMaxSize = 10 * 1024 * 1024
         editor2.customConfig.onchange = function (html) {

@@ -3,9 +3,11 @@ package com.jq.vo;
 import java.io.Serializable;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.jq.pojo.WebCase;
 import com.jq.pojo.WebSubCase;
-
+@Component
 public class MainCaseDetail implements Serializable{
 
 	/**

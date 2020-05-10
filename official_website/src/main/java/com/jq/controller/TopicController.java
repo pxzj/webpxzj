@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.jq.pojo.WebTopicDetail;
 import com.jq.service.TopicService;
+import com.jq.vo.TopicInfomation;
 
 @RestController
 public class TopicController {
@@ -27,8 +28,8 @@ public class TopicController {
     @RequestMapping("/findTopicDetail/{topicId}")
     public ModelAndView selectCaseDetailById(@PathVariable Long topicId) {
         ModelAndView modelAndView = new ModelAndView();
-        WebTopicDetail webTopicDetail = topicService.selectTopicDetailByTopicId(topicId);
-        modelAndView.addObject("webTopicDetail", webTopicDetail);
+        TopicInfomation topicInfomation = topicService.selectTopicDetailByTopicId(topicId);
+        modelAndView.addObject("topicInfomation", topicInfomation);
         modelAndView.setViewName("topicDetail");
         return modelAndView;
     }

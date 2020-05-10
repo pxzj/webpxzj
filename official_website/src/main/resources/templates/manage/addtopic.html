@@ -92,8 +92,8 @@
         </div>
         <div class="form-inline form-group">
             <p>
-                <label>摄影师:</label>
-                <input name="photographer" type="text" align="left">
+                <label>话题发布时间:</label>
+                <input name="workDate" type="date" align="left">
             </p>
 
         </div>
@@ -126,10 +126,6 @@
         editor2.customConfig.uploadImgServer = '/manage/upload'
         //配置指定文件名
         editor2.customConfig.uploadFileName = 'file'
-        //传一个目录名称过去,作为图片服务器上的子目录
-        editor2.customConfig.uploadImgParams = {
-            dir: 'news'
-        }
         editor2.customConfig.uploadImgMaxLength = 5
         editor2.customConfig.uploadImgMaxSize = 10 * 1024 * 1024
 

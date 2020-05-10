@@ -17,6 +17,8 @@ import com.jq.vo.MainCaseDetail;
 public class CaseServiceImpl implements CaseService{
 @Autowired
 CaseMapper caseMapper;	
+@Autowired
+MainCaseDetail mainCaseDetail;
 
 private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -27,20 +29,18 @@ public List<WebCase> selectAll() {
 }
 
 @Override
-public MainCaseDetail selectCaseDetailById(Long mainCaseId) {
-	logger.info("selectCaseDetailById start!! mainCaseId = " + mainCaseId);  		
-	MainCaseDetail mainCaseDetail = new MainCaseDetail();
+public MainCaseDetail selectCaseDetailById(Long mainCaseId) {	
+
 	WebCase webCase = caseMapper.selectOneByPK(mainCaseId);
 	if(webCase == null){
-	logger.debug("query web_case no record,mainCaseId = " + mainCaseId);  	
+	logger.debug("query web_case no record, mainCaseId = " + mainCaseId);  	
 	}
 	 WebSubCase  webSubCase = caseMapper.selectSubCaseByMainCaseId(mainCaseId);
 	 if(webSubCase == null){
-		logger.debug("query web_sub_case no record,mainCaseId = " + mainCaseId);  
+		logger.debug("query web_sub_case no record, mainCaseId = " + mainCaseId);  
 	 }
 	 mainCaseDetail.setWebCase(webCase);
 	 mainCaseDetail.setWebSubCase(webSubCase);
-		logger.info("selectCaseDetailById end!! mainCaseDetail = " + mainCaseDetail);  	
 	return mainCaseDetail;
 }
 

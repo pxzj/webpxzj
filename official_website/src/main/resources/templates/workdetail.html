@@ -12,8 +12,21 @@
     </style>
 </head>
 <body>
+   <div class="projectInfo" style="text-align:center">
+   <span th:text="'项目名称| '+ ${mainCaseDetail.webCase.projectName}"  /> 
+   <span th:text="'项目面积|'+ ${mainCaseDetail.webCase.projectArea}"  /> 
+   <span th:text="'完工时间|'+ ${mainCaseDetail.webCase.endDate}"  /> 
+   <span th:text="'项目地址|'+ ${mainCaseDetail.webCase.projectAddress}"  /> 
+   <span th:text="'设计风格|'+ ${mainCaseDetail.webCase.designStyle}"  /> 
+   <span th:text="'主要材料|'+ ${mainCaseDetail.webCase.mainMaterial}"  /> 
+   <span th:text="'设计单位|'+ ${mainCaseDetail.webCase.designCompany}"  /> 
+   <span th:text="'设 计 师|'+ ${mainCaseDetail.webCase.designer}"  /> 
+   <span th:text="'辅助设计|'+ ${mainCaseDetail.webCase.assistDisigner}"  /> 
+   <span th:text="'摄 影|'+ ${mainCaseDetail.webCase.photographer}"  /> 
+   <span th:text="'营销顾问|'+ ${mainCaseDetail.webCase.sales}"  /> 
+   
+    </div>
     <div class="body">
-        <span th:text="'案例ID：'+ ${mainCaseDetail.webCase.snId}" />
         <div th:utext="${mainCaseDetail.webSubCase.subCaseInfo}">
         </div>
     </div>
