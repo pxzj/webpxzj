@@ -1,6 +1,5 @@
 package com.jq.controller;
 
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +15,20 @@ import com.jq.vo.PicUploadResult;
 @RequestMapping("/manage")
 public class FileController {
 
-	@Autowired
+    @Autowired
     FileService fileService;
 
-	    
-	    @RequestMapping("/upload")
-	    public PicUploadResult uploadFile(@RequestParam("file") MultipartFile[] file, HttpServletRequest request) {
-	    
-	    	 return fileService.uploadFile(file, request);
-	   
-}
+    @RequestMapping("/upload")
+    public PicUploadResult uploadFile(@RequestParam("file") MultipartFile[] file, HttpServletRequest request) {
+
+        return fileService.uploadFile(file, request);
+
+    }
+
+    @RequestMapping("/upload1")
+    public PicUploadResult uploadFile1(@RequestParam("file") MultipartFile file, HttpServletRequest request) {
+
+        return fileService.uploadFile(new MultipartFile[]{file}, request);
+
+    }
 }

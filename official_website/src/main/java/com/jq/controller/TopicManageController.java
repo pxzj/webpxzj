@@ -54,16 +54,18 @@ public class TopicManageController {
     // 添加的新闻插入库
     @RequestMapping("/addTopic")
     @ResponseBody
-    public SysResult addTopic(WebTopic webTopic, String desc) {
-
+    public ModelAndView addTopic(WebTopic webTopic, String desc) {
+        ModelAndView success = new ModelAndView();
         try {
             topicManageService.addTopic(webTopic, desc);
+            success.setViewName("redirect:/manage/manage");
         } catch (Exception e) {
             logger.error("insert topic error, e= " + e.getMessage());
-            return SysResult.build(Constant.ONE, " add topic fail!!");
+            success.addObject("error", e.getMessage());
+            success.setViewName("error");
         }
-
-        return SysResult.Success();
+        
+        return success;
 
     }
 

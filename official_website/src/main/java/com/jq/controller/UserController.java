@@ -42,7 +42,8 @@ public class UserController {
         WebUser webUser = userService.findUSer();
 
         if (webUser == null) {
-            success.setViewName("loginerror");
+            success.addObject("error", "账号或密码错误");
+            success.setViewName("error");
             return success;
         }
         if (webUser.getUserName().equals(username) && webUser.getPassword().equals(password)) {
@@ -51,7 +52,8 @@ public class UserController {
             // 登录成功,把对象放在request域中
             request.getSession().setAttribute("webUser", webUser);
         } else {
-            success.setViewName("loginerror");
+            success.addObject("error", "账号或密码错误");
+            success.setViewName("error");
         }
 
         return success;

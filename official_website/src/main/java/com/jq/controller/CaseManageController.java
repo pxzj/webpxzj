@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.jq.constant.Constant;
 import com.jq.pojo.WebCase;
@@ -32,14 +33,17 @@ public class CaseManageController {
     // 新增案例
     @RequestMapping("/addCase")
     @ResponseBody
-    public SysResult addCase(WebCase webCase, String desc) {
+    public ModelAndView addCase(WebCase webCase, String desc) {
+        ModelAndView success = new ModelAndView();
         try {
             caseManageService.addCase(webCase, desc);
+            success.setViewName("redirect:/manage/manage");
         } catch (Exception e) {
             logger.error("insert case error, e= " + e.getMessage());
-            return SysResult.build(Constant.ONE, "addCase error!!");
+            success.addObject("error", e.getMessage());
+            success.setViewName("error");
         }
-        return SysResult.Success();
+        return success;
     }
 
     // 支持分页查询所有的案例里
