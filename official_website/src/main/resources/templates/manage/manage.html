@@ -54,20 +54,26 @@
         <div class="fh5co-narrow-content">
             <button class="btn" onclick="addtopic()">话题新增</button>
             <button class="btn" onclick="addwork()">案例新增</button>
-            <div class="row-bottom-padded-md">
-                
-                <div v-for="item in news" class="col-md-3 col-sm-6 col-padding text-center animate-box">
-
-                </div>
-                <br />
-                </border>
-                
-                <div v-for="item in topics" class="col-md-3 col-sm-6 col-padding text-center animate-box">
+            <div class="row-bottom-padded-md col-md-12">
+                <div th:each="item:${works}" class="col-md-3 col-sm-6 col-padding text-center">
+                    <div>
+                        <a class="work image-popup" th:style="${item.imgurl}">
+                        </a>
+                        <button class="btn"> 删除</button>
+                    </div>
 
                 </div>
             </div>
-
+            <br />
+            <h3 />
+            <h3>话题列表：</h3>
+            <div th:each="item:${topics}" class="col-md-6 col-sm-6  text-center ">
+                <a class="topic_item col-md-6" th:text="${item.title}" />  
+                <button class="btn"> 删除</button>
+            </div>
         </div>
+
+    </div>
     </div>
     <!-- jQuery -->
     <script src="../js/jquery.min.js"></script>

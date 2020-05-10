@@ -8,9 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.jq.constant.Constant;
+import com.jq.pojo.WebCase;
 import com.jq.pojo.WebTopic;
+import com.jq.service.CaseManageService;
 import com.jq.service.TopicManageService;
 import com.jq.vo.EasyUIResult;
 import com.jq.vo.SysResult;
@@ -22,6 +25,8 @@ public class TopicManageController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     TopicManageService topicManageService;
+    @Autowired
+    CaseManageService caseManageService;
 
     // 增加新闻
     @RequestMapping("/addtopic")
@@ -31,8 +36,19 @@ public class TopicManageController {
 
     // 新闻管理
     @RequestMapping("/manage")
-    public String managnews() {
-        return "manage/manage";
+    public ModelAndView managnews() {
+        ModelAndView modelAndView = new ModelAndView();
+        List<WebCase> imgs = caseManageService.findAllCase();
+        
+        if (imgs != null) {
+            for (WebCase webCase : imgs) {
+                webCase.imgurl = "background-image: url(../" + webCase.getMainCasePhoto() + ");";
+            }
+        }
+        modelAndView.addObject("works", imgs);
+        modelAndView.addObject("topics", topicManageService.findAllTopic());
+        modelAndView.setViewName("manage/manage");
+        return modelAndView;
     }
 
     // 增加案例

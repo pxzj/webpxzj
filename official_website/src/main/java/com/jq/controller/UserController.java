@@ -15,6 +15,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.jq.constant.Constant;
 import com.jq.pojo.WebUser;
+import com.jq.service.CaseManageService;
+import com.jq.service.CaseService;
+import com.jq.service.TopicService;
 import com.jq.service.UserService;
 import com.jq.vo.SysResult;
 
@@ -22,7 +25,8 @@ import com.jq.vo.SysResult;
 public class UserController {
     @Autowired
     UserService userService;
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+
 
     // 登陆页面
     @RequestMapping("/login")
