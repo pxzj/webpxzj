@@ -27,13 +27,13 @@ public class FileServiceImpl implements FileService{
 	 UrlConfig urlConfig;
 	
 	@Override
-	public PicUploadResult uploadFile(MultipartFile[] uploadFiles, HttpServletRequest request, String dir) {
+	public PicUploadResult uploadFile(MultipartFile[] uploadFiles, HttpServletRequest request) {
 	
       
        PicUploadResult result = new PicUploadResult();
       List<Photo> list = new ArrayList<>();
  
-         if(uploadFiles == null || dir == null){
+         if(uploadFiles == null){
          return PicUploadResult.fail(1, list);
         }
       

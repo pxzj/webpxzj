@@ -21,9 +21,9 @@ public class FileController {
 
 	    
 	    @RequestMapping("/upload")
-	    public PicUploadResult uploadFile(@RequestParam("file") MultipartFile[] file, HttpServletRequest request,  String dir) {
+	    public PicUploadResult uploadFile(@RequestParam("file") MultipartFile[] file, HttpServletRequest request) {
 	    
-	    	 return fileService.uploadFile(file,request,  dir);
+	    	 return fileService.uploadFile(file, request);
 	   
 }
 }
