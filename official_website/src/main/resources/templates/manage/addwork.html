@@ -82,7 +82,7 @@
                     <input name="projectName" type="text" align="left">
                 </div>
                 <div class="formItem">
-                    <label>话题作者:</label>
+                    <label>项目面积:</label>
                     <input name="projectArea" type="text" align="left">
                 </div>
             </div>
@@ -161,6 +161,38 @@
         }
         var E = window.wangEditor
         var editor2 = new E('#div2')
+        // 配置服务器端地址
+        editor2.customConfig.uploadImgServer = '/manage/upload'
+        //配置指定文件名
+        editor2.customConfig.uploadFileName = 'file'
+        //传一个目录名称过去,作为图片服务器上的子目录
+        editor2.customConfig.uploadImgParams = {
+            dir: 'news'
+        }
+        editor2.customConfig.uploadImgMaxLength = 5
+        editor2.customConfig.uploadImgMaxSize = 10 * 1024 * 1024
+
+        // 用监控函数来监控
+        editor2.customConfig.uploadImgHooks = {
+
+            customInsert: function (insertImg, result, editor2) {
+                // 图片上传并返回结果，图片插入成功之后触发
+                // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，result 是服务器端返回的结果
+                var error = result.error;
+                var photo = result.data;
+                if (error == 1) {
+                    alert('图片上传错误!!');
+                } else {
+                    alert('照片上传成功:' + photo);
+                    for (var i in photo) {
+                        alert('照片上传成功了哟 :' + photo[i].url);
+
+                        insertImg(photo[i].url)
+                    }
+                }
+            }
+
+        }
         editor2.create()
     </script>
 </body>
