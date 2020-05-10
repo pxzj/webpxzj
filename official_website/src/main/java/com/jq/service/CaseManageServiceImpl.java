@@ -44,4 +44,16 @@ CaseManageMapper caseManageMapper;
 		return EasyUIResult.success(total, webCaseList);
 	}
 
+	@Override
+	@Transactional
+	public void deleteCase(Long mainCaseId) {
+	 // 删除主案例表信息
+		caseManageMapper.deleteWebCase(mainCaseId);
+	 // 删除子案例信息	
+	caseManageMapper.deleteWebSubCase(mainCaseId);
+	}
+	
+	
+	
+
 }

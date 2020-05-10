@@ -35,4 +35,14 @@ select count(*) from web_case
 select * from web_case limit #{begin},#{pageSize}
 </select>
 
+
+<delete id="deleteWebCase">
+delete from web_case where sn_id = #{mainCaseId}
+</delete>
+
+
+<delete id="deleteWebSubCase">
+delete from web_sub_case where main_case_id = #{mainCaseId}
+</delete>
+
 </mapper>

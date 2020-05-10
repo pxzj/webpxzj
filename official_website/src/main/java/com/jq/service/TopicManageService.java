@@ -15,4 +15,7 @@ public interface TopicManageService {
     List<WebTopic> findAllTopic();
     /*分页查询所有的话题*/
     EasyUIResult findTopicByPage(Integer pageNo, Integer rows);
+    
+    /*根据话题Id删除话题相关信息*/
+    void deleteTopic(Long topicId);
 }

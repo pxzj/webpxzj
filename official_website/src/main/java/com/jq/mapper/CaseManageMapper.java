@@ -22,5 +22,10 @@ public interface CaseManageMapper {
 	    
 	    /*分页查询案例记录*/
 	    List<WebCase> findCaseByPage(Integer begin, Integer pageSize);
-	   
+	    
+	    /*根据主案例ID删除主案例表信息*/
+	    void  deleteWebCase(Long mainCaseId);
+	    
+	    /*根据主案例ID删除子案例表信息*/
+	   void deleteWebSubCase(Long mainCaseId);
 }

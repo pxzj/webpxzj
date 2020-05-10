@@ -45,4 +45,19 @@ TopicManageMapper topicManageMapper;
 		List<WebTopic> webTopicList =  topicManageMapper.findTopicByPage(begin,rows);
 		return EasyUIResult.success(total, webTopicList);
 	}
+
+	@Override
+	@Transactional 
+	public void deleteTopic(Long topicId) {
+		
+	  //根据话题id删除话题表记录
+		topicManageMapper.deleteWebTopic(topicId);
+	  //以及删除话题明细表记录	
+		topicManageMapper.deleteWebTopicDetail(topicId);
+	}
+	
+	
+	
+	
+	
 }

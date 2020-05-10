@@ -31,5 +31,12 @@ select count(*) from web_topic
 select * from web_topic limit #{begin},#{pageSize}
 </select>
 
+<delete id="deleteWebTopic">
+delete from web_topic where sn_id = #{topicId}
+</delete>
+
+<delete id="deleteWebTopicDetail">
+delete from web_topic_detail where topic_id = #{topicId}
+</delete>
 
 </mapper>

@@ -20,5 +20,8 @@ public interface CaseManageService {
 		    
 		    /*分页查询所有的话题*/
 		  EasyUIResult findCaseByPage(Integer pageNo, Integer rows);  
+		  
+		  /*根据主案例id删除主案例相关信息*/
+		  void deleteCase(Long mainCaseId);
 	
 }

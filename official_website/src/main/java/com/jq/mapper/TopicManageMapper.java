@@ -22,4 +22,10 @@ public interface TopicManageMapper {
     
     /*分页查询话题记录*/
     List<WebTopic> findTopicByPage(Integer begin, Integer pageSize);
+    
+    /*删除话题表记录*/
+    void deleteWebTopic(Long topicId);
+    
+    /*删除话题明细表记录*/
+    void deleteWebTopicDetail(Long topicId);
 }
