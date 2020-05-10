@@ -89,6 +89,14 @@ public class TopicManageController {
         return topicManageService.findTopicByPage(pageNo, rows);
     }
 
+
+    @RequestMapping("/deleteTopicById")
+    @ResponseBody
+    public SysResult deleteTopicById(String snId) {
+
+        return SysResult.success("");
+    }
+
     // TODO 回显更改的案例
 
     // TODO 更新编辑的新闻
