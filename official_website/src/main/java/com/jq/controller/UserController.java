@@ -20,37 +20,37 @@ import com.jq.vo.SysResult;
 
 @Controller
 public class UserController {
-@Autowired
-UserService userService;
-private Logger logger = LoggerFactory.getLogger(this.getClass());
+    @Autowired
+    UserService userService;
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-// 登陆页面
-  @RequestMapping("/login") 
-  public String login() {
-    
-	return "login";
-   }
+    // 登陆页面
+    @RequestMapping("/login")
+    public String login() {
+
+        return "login";
+    }
+
     @RequestMapping("/loginadmin")
     public ModelAndView loginadmin(@RequestParam("username") String username, @RequestParam("password") String password,
             Map<String, Object> map, HttpServletRequest request) {
         ModelAndView success = new ModelAndView();
-          WebUser webUser =  userService.findUSer();
-          
-         if(webUser == null){ 
-           success.setViewName("loginerror"); 
-           return success;
-         }    
+        WebUser webUser = userService.findUSer();
+
+        if (webUser == null) {
+            success.setViewName("loginerror");
+            return success;
+        }
         if (webUser.getUserName().equals(username) && webUser.getPassword().equals(password)) {
-        	//TODO 重定向到一个管理系统?
+            // TODO 重定向到一个管理系统?
             success.setViewName("redirect:/manage/manage");
-          //登录成功,把对象放在request域中
-        	request.getSession().setAttribute("webUser", webUser);
+            // 登录成功,把对象放在request域中
+            request.getSession().setAttribute("webUser", webUser);
         } else {
             success.setViewName("loginerror");
         }
-        
+
         return success;
     }
 
-	
 }

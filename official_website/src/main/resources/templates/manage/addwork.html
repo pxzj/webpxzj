@@ -62,7 +62,7 @@
             vertical-align: top;
         }
 
-        p {
+        .formItem {
             display: inline;
             padding: 20px 0;
         }
@@ -70,71 +70,73 @@
         input {
             font-size: inherit;
             width: 20rem;
+            height:2rem;
+            margin:0 0 10px 10px;
         }
     </style>
     <form th:action="@{/manage/addCase}" method="post">
         <fieldset>
             <div class="form-inline form-group">
-                <p>
+                <div class="formItem">
                     <label>项目名称:</label>
                     <input name="projectName" type="text" align="left">
-                </p>
-                <p>
+                </div>
+                <div class="formItem">
                     <label>话题作者:</label>
                     <input name="projectArea" type="text" align="left">
-                </p>
+                </div>
             </div>
             <div class="form-inline form-group">
-                <p>
+                <div class="formItem">
                     <label>项目结束时间:</label>
                     <input name="endDate" type="date" align="left">
-                </p>
-                <p>
+                </div>
+                <div class="formItem">
                     <label>设计风格:</label>
                     <input name="designStyle" type="text" align="left">
-                </p>
+                </div>
             </div>
             <div class="form-inline form-group">
-                <p>
+                <div class="formItem">
                     <label>主要材料:</label>
                     <input name="mainMaterial" type="text" align="left">
-                </p>
-                <p>
+                </div>
+                <div class="formItem">
                     <label>设计单位:</label>
                     <input name="designCompany" type="text" align="left">
-                </p>
+                </div>
             </div>
             <div class="form-inline form-group">
-                <p>
+                <div class="formItem">
                     <label>设计师:</label>
                     <input name="designer" type="text" align="left">
-                </p>
-                <p>
+                </div>
+                <div class="formItem">
                     <label>辅助设计师:</label>
                     <input name="assistDisigner" type="text" align="left">
-                </p>
+                </div>
             </div>
             <div class="form-inline form-group">
-                <p>
+                <div class="formItem">
                     <label>摄影师:</label>
                     <input name="photographer" type="text" align="left">
-                </p>
-                <p>
+                </div>
+                <div class="formItem">
                     <label>营销顾问:</label>
                     <input name="sales" type="text" align="left">
-                </p>
+                </div>
 
 
             </div>
 
             <div class="form-inline form-group">
-                <p>
+                <div class="formItem">
                     <label>入口图片:</label>
                     <input type="file" name="file" onchange="changepic(this)" id="file" class="inputfile" />
-                </p>
-                <p>
+                </div>
+                <div class="formItem">
                     <img src="" id="show" width="200">
-                </p>
+                </div>
             </div>
             <div style="padding: 5px 0; color: #ccc">案例详情</div>
             <div id="div2" class="text">

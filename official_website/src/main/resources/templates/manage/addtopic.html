@@ -66,6 +66,10 @@
             display: inline;
             padding: 20px 0;
         }
+        .formItem{
+            display: inline;
+            padding: 20px 0;
+        }
 
         input {
             font-size: inherit;
@@ -73,16 +77,15 @@
         }
     </style>
     <form th:action="@{/manage/addTopic}" method="post">
-        <fieldset>
             <div class="form-inline form-group">
-                <p>
+                <div class="formItem">
                     <label>话题标题:</label>
                     <input name="title" type="text" align="left">
-                </p>
-                <p>
+                </div>
+                <div class="formItem">
                     <label>话题作者:</label>
                     <input name="author" type="text" align="left">
-                </p>
+                </div>
             </div>
             <div class="form-inline form-group">
                 <p>
@@ -94,11 +97,10 @@
             <div style="padding: 5px 0; color: #ccc">话题详情</div>
             <div id="div2" class="text">
             </div>
-            <input id="desc" name="desc"  type="hidden"/>
+            <input id="desc" name="desc" type="hidden" />
             <a href="manage/addTopic" target="_self">
                 <h1><button>提交</button></h1>
             </a>
-        </fieldset>
     </form>
 
     <script type="text/javascript">
@@ -114,42 +116,42 @@
         }
         var E = window.wangEditor
         var editor2 = new E('#div2')
-        
+
         // 配置服务器端地址
         editor2.customConfig.uploadImgServer = '/manage/upload'
-       //配置指定文件名
-       editor2.customConfig.uploadFileName = 'file'
-       //传一个目录名称过去,作为图片服务器上的子目录
+        //配置指定文件名
+        editor2.customConfig.uploadFileName = 'file'
+        //传一个目录名称过去,作为图片服务器上的子目录
         editor2.customConfig.uploadImgParams = {
-        	   dir	: 'news'
-    		}
+            dir: 'news'
+        }
         editor2.customConfig.uploadImgMaxLength = 5
         editor2.customConfig.uploadImgMaxSize = 10 * 1024 * 1024
-        
+
         // 用监控函数来监控
         editor2.customConfig.uploadImgHooks = {
-        		
-        	customInsert: function (insertImg, result, editor2) {
-        	        // 图片上传并返回结果，图片插入成功之后触发
-        	        // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，result 是服务器端返回的结果
-        	        var error  = result.error;
-        	        var photo = result.data;
-        	        if(error == 1){
-        	        alert('图片上传错误!!');
-        	        } else {
-        	        	alert('照片上传成功:' + photo);
-        	        	for(var i in photo){
-        	        		alert('照片上传成功了哟 :'+ photo[i].url);
 
-                	        		insertImg(photo[i].url)	
-        	        	}
-        	        }
-        	}      	
-        		
+            customInsert: function (insertImg, result, editor2) {
+                // 图片上传并返回结果，图片插入成功之后触发
+                // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，result 是服务器端返回的结果
+                var error = result.error;
+                var photo = result.data;
+                if (error == 1) {
+                    alert('图片上传错误!!');
+                } else {
+                    alert('照片上传成功:' + photo);
+                    for (var i in photo) {
+                        alert('照片上传成功了哟 :' + photo[i].url);
+
+                        insertImg(photo[i].url)
+                    }
+                }
+            }
+
         }
-        
+
         editor2.customConfig.onchange = function (html) {
-            var  desc = document.getElementById('desc')
+            var desc = document.getElementById('desc')
             desc.value = html
         }
         editor2.create()
