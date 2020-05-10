@@ -19,7 +19,7 @@ insert into web_topic (sn_id,title,author,photographer,created,updated) values (
 </insert>	
 
 <select id="selectAllTopic" resultType= "webTopic">
-select * from 
+select * from web_topic
 </select>
 
 <select id= "selectTopicCount" resultType="Integer">
