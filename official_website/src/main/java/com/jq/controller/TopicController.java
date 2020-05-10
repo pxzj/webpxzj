@@ -16,18 +16,17 @@ import com.jq.vo.SysResult;
 
 @RestController
 public class TopicController {
- @Autowired
-TopicService topicService;	
- 
+    @Autowired
+    TopicService topicService;
 
     // 查询某个话题新闻明细
     @RequestMapping("/findTopicDetail/{topicId}")
-    public ModelAndView  selectCaseDetailById(@PathVariable Long topicId){
-    	ModelAndView modelAndView = new ModelAndView();
-   	 WebTopicDetail webTopicDetail = topicService.selectTopicDetailByTopicId(topicId);
-   	modelAndView.addObject("webTopicDetail", webTopicDetail);
-   	modelAndView.setViewName("topicdetail");
-   	 return modelAndView;
-    }	
-    
+    public ModelAndView selectCaseDetailById(@PathVariable Long topicId) {
+        ModelAndView modelAndView = new ModelAndView();
+        WebTopicDetail webTopicDetail = topicService.selectTopicDetailByTopicId(topicId);
+        modelAndView.addObject("webTopicDetail", webTopicDetail);
+        modelAndView.setViewName("topicDetail");
+        return modelAndView;
+    }
+
 }

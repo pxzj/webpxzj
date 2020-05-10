@@ -24,9 +24,9 @@ public class TopicManageController {
     TopicManageService topicManageService;
 
     // 增加新闻
-    @RequestMapping("/addnews")
+    @RequestMapping("/addtopic")
     public String addnews() {
-        return "manage/addnews";
+        return "manage/addtopic";
     }
 
     // 新闻管理

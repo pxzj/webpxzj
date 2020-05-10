@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>纪青空间设计</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!-- Facebook and Twitter integration -->
+		<meta property="og:title" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:site_name" content="" />
+		<meta property="og:description" content="" />
+		<meta name="twitter:title" content="" />
+		<meta name="twitter:image" content="" />
+		<meta name="twitter:url" content="" />
+		<meta name="twitter:card" content="" />
+
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="shortcut icon" href="favicon.ico">
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+		<!-- Animate.css -->
+		<link rel="stylesheet" href="css/animate.css">
+		<!-- Icomoon Icon Fonts-->
+		<link rel="stylesheet" href="css/icomoon.css">
+		<!-- Bootstrap  -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<!-- Flexslider  -->
+		<link rel="stylesheet" href="css/flexslider.css">
+		<!-- Theme style  -->
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- Modernizr JS -->
+		<script src="js/modernizr-2.6.2.min.js"></script>
+		<!-- FOR IE9 below -->
+		<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+		<div id="fh5co-page">
+			<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+			<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+				<img src="images/logom.jpg" class="logoimg" />
+				<nav id="fh5co-main-menu" role="navigation">
+					<ul>
+						<li><a href="index">首页/HOME</a></li>
+						<li class="fh5co-active"><a href="service">服务/SERVICE</a></li>
+						<li><a href="work">案例/WORK</a></li>
+						<li><a href="topic">话题/TOPIC</a></li>
+						<li><a href="recuit">招募/RECRUIT</a></li>
+						<li><a href="contact">联系/CONTACT</a></li>
+					</ul>
+				</nav>
+			</aside>
+
+			<div id="fh5co-main">
+				<div class="fh5co-narrow-content">
+                 <!--row row-bottom-padded-md-->
+					<div class=" row-bottom-padded-md">
+						<div class="col-md-4 animate-box " data-animate-effect="fadeInLeft">
+							<div class="js-fullheight font-center">
+								<center>
+									<h2>设 计 流 程</h2>
+									① 初步沟通<br />
+									明确设计需求 确定设计目标（支付设计定金20%）<br /><br />
+									② 现场勘测<br />
+									现场勘察测量<br /><br />
+									③ 初步设计方案<br />
+									确定设计方案 签订设计合同（支付首期费用30%）<br /><br />
+									④ 效果图绘制<br />
+									三维空间展示（支付二期费用45%）<br /><br />
+									⑤ 施工图绘制<br />
+									施工图交付 确定开工日期<br /><br />
+									⑥ 选材配饰<br />
+									确定材料样板 搭配灯光软装<br /><br />
+									⑦ 设计维护<br />
+									全面竣工 全周期设计服务（支付尾款费用5%）<br />
+								</center>
+							</div>
+						</div>
+						<div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
+							<div class="fh5co-narrow-content">
+								<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft"><center>设计范围</center></h2>
+								<h3 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft"><center>酒店   餐饮   店铺   文娱   办公   售楼处   样板间</center></h3>
+								<div class="row row-bottom-padded-md" id="app-service">
+									<div  v-for="item in imgs" class="col-md-3 col-sm-6 col-padding text-center animate-box">
+										<a href="#" class="work image-popup" :style="item.imgurl">
+										</a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<!-- jQuery -->
+		<script src="js/jquery.min.js"></script>
+		<!-- jQuery Easing -->
+		<script src="js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Waypoints -->
+		<script src="js/jquery.waypoints.min.js"></script>
+		<!-- Flexslider -->
+		<script src="js/jquery.flexslider-min.js"></script>
+
+
+		<!-- MAIN JS -->
+		<script src="js/main.js"></script>
+        <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+        var app4 = new Vue({
+            el: '#app-service',
+            data: {
+                imgs: [{
+                        imgurl: 'background-image: url(images/img-1.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-2.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-3.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-4.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-5.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-6.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-1.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-2.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-3.jpg);'
+                    },
+                    {
+                        imgurl: 'background-image: url(images/img-4.jpg);'
+                    },
+                ]
+            }
+        })
+    </script>
+	</body>
+    
+</html>
