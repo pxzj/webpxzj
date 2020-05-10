@@ -26,8 +26,6 @@ public class IndexController {
     @Autowired
     TopicService topicService;
 
-    @Autowired
-    TopicManageService topicManageService;
 
     @RequestMapping("/index")
     public ModelAndView index() {
@@ -62,16 +60,7 @@ public class IndexController {
     public String contact() {
         return "contact";
     }
-
-    @RequestMapping("/topic")
-    public ModelAndView topic(Model model) {
-
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("topics", topicManageService.findAllTopic());
-        modelAndView.setViewName("topic");
-        return modelAndView;
-    }
-
+    
     @RequestMapping("/workdetail")
     public ModelAndView workdetail(@RequestParam("snId") String snId) {
         ModelAndView modelAndView = new ModelAndView();

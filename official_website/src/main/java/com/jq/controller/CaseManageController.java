@@ -23,14 +23,6 @@ public class CaseManageController {
     @Autowired
     CaseManageService caseManageService;
 
-    // 新增案例页面
-    @RequestMapping("/addCasePage")
-    public String addCasePage() {
-
-        // TODO 待前端新增添加案例页面
-        return "manage/casesadd";
-    }
-
     // 新增案例
     @RequestMapping("/addCase")
     @ResponseBody
