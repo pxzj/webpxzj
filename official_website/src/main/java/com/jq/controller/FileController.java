@@ -1,8 +1,11 @@
 package com.jq.controller;
 
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,18 +16,14 @@ import com.jq.vo.PicUploadResult;
 @RequestMapping("/manage")
 public class FileController {
 
-
 	@Autowired
-	private FileService fileService;
-	
-	
-	//处理文件上传  {"error":0,"url":"图片的保存路径","width":图片的宽度,"height":图片的高度}
-	@RequestMapping("/upload")
-	public PicUploadResult uploadFile(MultipartFile  uploadFile){
-		
-		return fileService.uploadFile(uploadFile);
-	
-	}
-	
-	
+    FileService fileService;
+
+	    
+	    @RequestMapping("/upload")
+	    public PicUploadResult uploadFile(@RequestParam("file") MultipartFile[] file, HttpServletRequest request,  String dir) {
+	    
+	    	 return fileService.uploadFile(file,request,  dir);
+	   
+}
 }

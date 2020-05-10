@@ -1,43 +1,48 @@
 package com.jq.vo;
 
-public class PicUploadResult {
-    private Integer error=0;		//图片上传错误不能抛出，抛出就无法进行jsp页面回调，所以设置这个标识，0表示无异常，1代表异常
-    private String url;
-    private String width;
-    private String height;
+import java.util.List;
 
-    public Integer getError() {
+import com.jq.constant.Constant;
+
+public class PicUploadResult {
+	
+    private Integer error = Constant.ZERO;		//0表示无异常，1代表异常
+    
+    
+    private List<Photo> data; // 支持返回多个照片的路径
+ 
+    public PicUploadResult(){
+    	
+    }
+    public PicUploadResult( List<Photo> data){
+    	this.data = data;
+    } 
+    
+   public PicUploadResult(int error, List<Photo> data){
+    	this.error = error;
+    	this.data = data;
+    }
+
+   public static PicUploadResult  fail(int error, List<Photo> data){
+	   return new PicUploadResult(error, data);
+   }
+   
+   public static PicUploadResult success(List<Photo> data){
+	   return new PicUploadResult(data);
+   }
+   
+	public Integer getError() {
         return error;
     }
 
     public void setError(Integer error) {
         this.error = error;
     }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getWidth() {
-        return width;
-    }
-
-    public void setWidth(String width) {
-        this.width = width;
-    }
-
-    public String getHeight() {
-        return height;
-    }
-
-    public void setHeight(String height) {
-        this.height = height;
-    }
-    
-    
+	public List<Photo> getData() {
+		return data;
+	}
+	public void setData(List<Photo> data) {
+		this.data = data;
+	}
 
 }
