@@ -11,16 +11,16 @@
 	 -->
 	
 	
-<select id="selectAll" resultType = "webTopic">
+<select id="selectAll" resultType="webTopic">
 select * from web_topic
 </select>
 
 <select id="selectOneByPK"  resultType="webTopic">
-select * from web_topic  where sn_id = #{topicId}
+select * from web_topic where sn_id = #{topicId}
 </select>
 
 <select id="selectTopicDetatilByTopicId"  resultType="webTopicDetail">
-select * from web_topic_detail  where topic_id = #{topicId}
+select * from web_topic_detail where topic_id = #{topicId}
 </select>
 
 </mapper>

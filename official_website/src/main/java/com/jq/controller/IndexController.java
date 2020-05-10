@@ -7,6 +7,7 @@ import com.alibaba.druid.util.StringUtils;
 import com.jq.pojo.WebCase;
 import com.jq.pojo.WebTopic;
 import com.jq.service.CaseService;
+import com.jq.service.TopicManageService;
 import com.jq.service.TopicService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class IndexController {
 
     @Autowired
     TopicService topicService;
+
+    @Autowired
+    TopicManageService topicManageService;
 
     @RequestMapping("/index")
     public ModelAndView index() {
@@ -63,7 +67,7 @@ public class IndexController {
     public ModelAndView topic(Model model) {
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("attributeName", topicService.selectAll());
+        modelAndView.addObject("topics", topicManageService.findAllTopic());
         modelAndView.setViewName("topic");
         return modelAndView;
     }
