@@ -10,6 +10,6 @@ import com.jq.vo.PicUploadResult;
 @Service
 public interface FileService {
 
-	PicUploadResult uploadFile(MultipartFile[] uploadFiles,  HttpServletRequest request, String dir);
+	PicUploadResult uploadFile(MultipartFile[] uploadFiles,  HttpServletRequest request);
 	
 }
