@@ -12,13 +12,20 @@ import org.springframework.web.servlet.ModelAndView;
 import com.jq.pojo.WebTopic;
 import com.jq.pojo.WebTopicDetail;
 import com.jq.service.TopicService;
-import com.jq.vo.SysResult;
 
 @RestController
 public class TopicController {
     @Autowired
     TopicService topicService;
 
+    
+    // 查询所有的主案例
+    @RequestMapping("/findTopicAll")
+    public List<WebTopic> selectAll() {
+        return topicService.selectAll();
+    }
+
+    
     // 查询某个话题新闻明细
     @RequestMapping("/findTopicDetail/{topicId}")
     public ModelAndView selectCaseDetailById(@PathVariable Long topicId) {
