@@ -50,13 +50,7 @@ public class TopicManageController {
         modelAndView.setViewName("manage/manage");
         return modelAndView;
     }
-
-    // 增加案例
-    @RequestMapping("/addwork")
-    public String addwork() {
-        return "manage/addwork";
-    }
-
+    
     // 添加的新闻插入库
     @RequestMapping("/addTopic")
     @ResponseBody
@@ -73,14 +67,6 @@ public class TopicManageController {
 
     }
 
-    // 支持查询所有的新闻
-    @RequestMapping("/findAllTopic")
-    @ResponseBody
-    public SysResult findAllTopic() {
-        List<WebTopic> webTopicList = topicManageService.findAllTopic();
-        return SysResult.success(webTopicList);
-    }
-
     // 支持分页查询所有的新闻
     @RequestMapping("/findTopicByPage")
     @ResponseBody
@@ -89,20 +75,21 @@ public class TopicManageController {
         return topicManageService.findTopicByPage(pageNo, rows);
     }
 
-
+    
+    // 支持新闻的删除
     @RequestMapping("/deleteTopicById")
     @ResponseBody
     public SysResult deleteTopicById(String snId) {
-
-        return SysResult.success("");
+     
+    	   try {
+               topicManageService.deleteTopic(Long.valueOf(snId));
+           } catch (Exception e) {
+               logger.error("delete topic error, e= " + e.getMessage());
+               return SysResult.build(Constant.ONE, " delete topic fail!!");
+           }
+           return SysResult.Success();
     }
 
-    // TODO 回显更改的案例
 
-    // TODO 更新编辑的新闻
-
-    // TODO 支持新闻的删除
-
-    // TODO 支持新闻的批量删除
 
 }

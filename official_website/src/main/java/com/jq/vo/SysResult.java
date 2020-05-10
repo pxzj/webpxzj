@@ -22,32 +22,21 @@ public class SysResult implements Serializable{
      *  0	成功
      *  1	失败
      */
-    private Integer returnCode;
+    private Integer returnCode = 0;
 
     // 具体的错误信息
-    private String returnMsg;
+    private String returnMsg = "";
 
     // 响应中的数据
     private Object data;
 
-    public static SysResult build(Integer returnCode, String returnMsg, Object data) {
-        return new SysResult(returnCode, returnMsg, data);
-    }
-
-    public static SysResult success(Object data) {
-        return new SysResult(data);
-    }
-
-    public static SysResult Success() {
-        return new SysResult(null);
-    }
 
     public SysResult() {
 
     }
-
-    public static SysResult build(Integer returnCode, String returnMsg) {
-        return new SysResult(returnCode, returnMsg, null);
+    
+    public SysResult(Object data) {
+        this.data = data;
     }
 
     public SysResult(Integer returnCode, String returnMsg, Object data) {
@@ -56,13 +45,22 @@ public class SysResult implements Serializable{
         this.data = data;
     }
 
-    public SysResult(Object data) {
-        this.returnCode = 0;
-        this.returnMsg = "";
-        this.data = data;
+    public static SysResult Success() {
+        return new SysResult();
+    }
+    
+    public static SysResult success(Object data) {
+        return new SysResult(data);
     }
 
-    
+    public static SysResult build(Integer returnCode, String returnMsg, Object data) {
+        return new SysResult(returnCode, returnMsg, data);
+    }
+
+    public static SysResult build(Integer returnCode, String returnMsg) {
+        return new SysResult(returnCode, returnMsg, null);
+    }
+ 
     public Boolean isSuccess() {
         return this.returnCode == 0;
     }

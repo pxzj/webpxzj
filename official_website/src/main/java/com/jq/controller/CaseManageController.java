@@ -23,12 +23,10 @@ public class CaseManageController {
     @Autowired
     CaseManageService caseManageService;
 
-    // 新增案例页面
-    @RequestMapping("/addCasePage")
-    public String addCasePage() {
-
-        // TODO 待前端新增添加案例页面
-        return "manage/casesadd";
+    // 增加案例
+    @RequestMapping("/addwork")
+    public String addwork() {
+        return "manage/addwork";
     }
 
     // 新增案例
@@ -44,14 +42,6 @@ public class CaseManageController {
         return SysResult.Success();
     }
 
-    // 支持查询所有的案例
-    @RequestMapping("/findAllCase")
-    @ResponseBody
-    public SysResult findAllCase() {
-        List<WebCase> webCaseList = caseManageService.findAllCase();
-        return SysResult.success(webCaseList);
-    }
-
     // 支持分页查询所有的案例里
     @RequestMapping("/findCaseByPage")
     @ResponseBody
@@ -59,20 +49,24 @@ public class CaseManageController {
 
         return caseManageService.findCaseByPage(pageNo, rows);
     }
-
+    
+    // 持新闻的删除
     @RequestMapping("/deleteCaseById")
     @ResponseBody
-    public SysResult deleteCase(String snId) {
-       // List<WebCase> webCaseList = caseManageService.findAllCase();
-        return SysResult.Success();
+    public SysResult deleteCaseById(String snId) {
+    
+    	try {
+            caseManageService.deleteCase(Long.valueOf(snId));
+        } catch (Exception e) {
+            logger.error("delete case error, e= " + e.getMessage());
+            return SysResult.build(Constant.ONE, "deleteCase error!!");
+        }
+        return SysResult.Success();	
     }
 
-    // TODO 回显更改的案例
+    
 
-    // TODO 更新编辑的新闻
+   
 
-    // TODO 支持新闻的删除
-
-    // TODO 支持新闻的批量删除
 
 }
