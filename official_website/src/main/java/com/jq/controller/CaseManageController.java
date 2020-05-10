@@ -60,6 +60,13 @@ public class CaseManageController {
         return caseManageService.findCaseByPage(pageNo, rows);
     }
 
+    @RequestMapping("/deleteCaseById")
+    @ResponseBody
+    public SysResult deleteCase(String snId) {
+       // List<WebCase> webCaseList = caseManageService.findAllCase();
+        return SysResult.Success();
+    }
+
     // TODO 回显更改的案例
 
     // TODO 更新编辑的新闻

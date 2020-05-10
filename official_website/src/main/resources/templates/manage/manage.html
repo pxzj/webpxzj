@@ -59,7 +59,8 @@
                     <div>
                         <a class="work image-popup" th:style="${item.imgurl}">
                         </a>
-                        <button class="btn"> 删除</button>
+                        <button class="btn" th:onclick="'javascript : deleteWork(\'' + ${ item.snId } + '\')'">
+                            删除</button>
                     </div>
 
                 </div>
@@ -68,8 +69,8 @@
             <h3 />
             <h3>话题列表：</h3>
             <div th:each="item:${topics}" class="col-md-6 col-sm-6  text-center ">
-                <a class="topic_item col-md-6" th:text="${item.title}" />  
-                <button class="btn"> 删除</button>
+                <a class="topic_item col-md-6" th:text="${item.title}" />
+                <button class="btn" th:onclick="'javascript : deleteTopic(\'' + ${ item.snId } + '\')'"> 删除</button>
             </div>
         </div>
 
@@ -87,6 +88,36 @@
         function addwork() {
             $(location).attr('href', '/manage/addwork');
         };
+
+        function deleteWork(id) {
+            var url = '/manage/deleteCaseById';
+            var data = {
+                "snId": id,
+            };
+            $.post(url, data).done(function (res) {
+                if (res.returnCode == "0") {
+                    alert("删除成功")
+                    $(location).attr('href', '/manage/manage');
+                } else {
+                    alert(res.returnCode + " " + res.returnMsg)
+                }
+            })
+        }
+
+        function deleteTopic(id) {
+            var url = '/manage/deleteTopicById';
+            var data = {
+                "snId": id,
+            };
+            $.post(url, data).done(function (res) {
+                if (res.returnCode == "0") {
+                    alert("删除成功")
+                    $(location).attr('href', '/manage/manage');
+                } else {
+                    alert(res.returnCode + " " + res.returnMsg)
+                }
+            })
+        }
     </script>
 </body>
 
