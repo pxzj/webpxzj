@@ -12,22 +12,65 @@
     </style>
 </head>
 <body>
-   <div class="projectInfo" style="text-align:center">
-   <span th:text="'项目名称| '+ ${mainCaseDetail.webCase.projectName}"  /> 
-   <span th:text="'项目面积|'+ ${mainCaseDetail.webCase.projectArea}"  /> 
-   <span th:text="'完工时间|'+ ${mainCaseDetail.webCase.endDate}"  /> 
-   <span th:text="'项目地址|'+ ${mainCaseDetail.webCase.projectAddress}"  /> 
-   <span th:text="'设计风格|'+ ${mainCaseDetail.webCase.designStyle}"  /> 
-   <span th:text="'主要材料|'+ ${mainCaseDetail.webCase.mainMaterial}"  /> 
-   <span th:text="'设计单位|'+ ${mainCaseDetail.webCase.designCompany}"  /> 
-   <span th:text="'设 计 师|'+ ${mainCaseDetail.webCase.designer}"  /> 
-   <span th:text="'辅助设计|'+ ${mainCaseDetail.webCase.assistDisigner}"  /> 
-   <span th:text="'摄 影|'+ ${mainCaseDetail.webCase.photographer}"  /> 
-   <span th:text="'营销顾问|'+ ${mainCaseDetail.webCase.sales}"  /> 
-   
-    </div>
+ 
     <div class="body">
-        <div th:utext="${mainCaseDetail.webSubCase.subCaseInfo}">
+     
+     <p>
+     <phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
+     <span th:text="'项目名称|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.projectName}"/> </phelvetica></p>
+
+     <div><p></p> 
+     <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
+     <span th:text="'项目面积|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.projectArea}"/> </phelvetica></p>
+     </div>
+       
+      <div><p></p> 
+      <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
+     <span th:text="'完工时间|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.endDate}"/> </phelvetica></p>
+     </div> 
+       
+         <div><p></p> 
+      <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
+      <span th:text="'项目地址|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.projectAddress}"/> </phelvetica></p>
+     </div> 
+       
+         <div><p></p> 
+      <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
+      <span th:text="'设计风格|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.designStyle}"/> </phelvetica></p>
+     </div> 
+       
+         <div><p></p> 
+      <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
+      <span th:text="'主要材料|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.mainMaterial}"/> </phelvetica></p>
+     </div> 
+     
+       <div><p></p> 
+      <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
+      <span th:text="'设计单位|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.designCompany}"/> </phelvetica></p>
+     </div> 
+     
+       <div><p></p> 
+      <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
+      <span th:text="'设 计 师|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.designer}"/> </phelvetica></p>
+     </div> 
+     
+       <div><p></p> 
+      <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
+      <span th:text="'辅助设计|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.assistDisigner}"/> </phelvetica></p>
+     </div> 
+     
+       <div><p></p> 
+     <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
+      <span th:text="'摄  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;影| ' + ${mainCaseDetail.webCase.photographer}"/> </phelvetica></p>
+     </div> 
+     
+       <div><p></p> 
+     <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
+      <span th:text="'营销顾问|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.sales}"/> </phelvetica></p>
+     </div> 
+       <div><p widows="1"></p> 
+     </div> 
+        <div th:utext="${mainCaseDetail.webCase.sales}">
         </div>
     </div>
 </body>

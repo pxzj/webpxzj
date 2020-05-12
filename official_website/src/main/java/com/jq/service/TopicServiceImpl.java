@@ -22,7 +22,12 @@ private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Override
 	public List<WebTopic> selectAll() {
+		
 		List<WebTopic>  resultList = topicMapper.selectAll();
+		int i = 0; //初始化
+       for (WebTopic webTopic : resultList) {
+    	   webTopic.setTitleId(++i);
+	}
 		return resultList;
 	}
 

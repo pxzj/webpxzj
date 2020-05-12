@@ -13,7 +13,15 @@
 </head>
 <body>
     <div class="body">
-           <span th:text="'话题作者|'+ ${topicInfomation.webTopic.title}" />
+    <div style="text-align:left" th:text="${topicInfomation.webTopic.title}"></div>
+    <p><font color="#c24f4a" th:text="${topicInfomation.webTopic.author}"/>&nbsp;&nbsp;
+    <font color="#4d80bf" th:text="${topicInfomation.webTopic.title}"/>&nbsp;&nbsp;&nbsp;
+    <font color="#c24f4a" th:text="${topicInfomation.webTopic.workDate}"/></font>
+    </p>
+<div><br/></div>
+<div><br/></div>
+
+         
         <div th:utext="${topicInfomation.webTopicDetail.topicDesc}">
         </div>
     </div>

@@ -1,8 +1,10 @@
 package com.jq.pojo;
 
+import java.beans.Transient;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
+
 
 public class WebTopic implements Serializable {
 
@@ -10,14 +12,22 @@ public class WebTopic implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -8096923622580982466L;
-
+	private static final long serialVersionUID = -8096923622580982466L;		
+	private  int titleId;
     private Long snId;// 自增主键
     private String title;// 话题标题
     private String author;// 话题作者
     private Date workDate;// 摄影师
     private Timestamp created;// 创建时间
     private Timestamp updated;// 更新时间
+    
+	@Transient
+	public int getTitleId() {
+		return titleId;
+	}
+	public void setTitleId(int titleId) {
+		this.titleId = titleId;
+	}
 	public Long getSnId() {
 		return snId;
 	}
@@ -57,8 +67,9 @@ public class WebTopic implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "WebTopic [snId=" + snId + ", title=" + title + ", author=" + author + ", workDate=" + workDate
-				+ ", created=" + created + ", updated=" + updated + "]";
+		return "WebTopic [titleId=" + titleId + ", snId=" + snId + ", title=" + title + ", author=" + author
+				+ ", workDate=" + workDate + ", created=" + created + ", updated=" + updated + "]";
 	}
+
 
 }
