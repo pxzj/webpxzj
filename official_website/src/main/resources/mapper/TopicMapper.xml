@@ -24,7 +24,7 @@ select * from web_topic_detail where topic_id = #{topicId}
 </select>
 
 <select id="selectTopicById" resultType="webTopic">
-select * from web_topic where sn_id = #{topicId}
+select * from  where sn_id = #{topicId}
 </select>
 
 </mapper>

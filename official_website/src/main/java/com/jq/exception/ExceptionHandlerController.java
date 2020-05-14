@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.jq.constant.Constant;
 import com.jq.vo.SysResult;
@@ -21,9 +22,11 @@ import com.jq.vo.SysResult;
 public class ExceptionHandlerController {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
     @ExceptionHandler(Exception.class)
-    public SysResult defaultExceptionHandler(HttpServletRequest request, Exception e)
+    public ModelAndView defaultExceptionHandler(HttpServletRequest request, Exception e)
             throws Exception {
+    	ModelAndView modelAndView = new ModelAndView();
     	logger.error("catch exception, e= " + e.getMessage());
-        return SysResult.build(Constant.ONE, "server error !!");
+    	modelAndView.setViewName("allerror");
+        return modelAndView;
     }
 }

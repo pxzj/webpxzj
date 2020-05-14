@@ -3,6 +3,7 @@
     <groupId>com.jq</groupId>
     <artifactId>official_website</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>official_website Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
@@ -58,12 +59,11 @@
     <build>
         <plugins>
             <!-- 添加SpringBoot编译插件 -->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+           <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
         </plugins>
-        <finalName>official_website</finalName>
     </build>
 
 
