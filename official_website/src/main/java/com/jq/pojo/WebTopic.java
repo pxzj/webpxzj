@@ -18,6 +18,9 @@ public class WebTopic implements Serializable {
     private String title;// 话题标题
     private String author;// 话题作者
     private Date workDate;// 摄影师
+    private String topicPhoto;// 话题照片URL
+    private String height;// 高度
+    private String width;// 宽度
     private Timestamp created;// 创建时间
     private Timestamp updated;// 更新时间
     
@@ -53,6 +56,25 @@ public class WebTopic implements Serializable {
 	public void setWorkDate(Date workDate) {
 		this.workDate = workDate;
 	}
+	
+	public String getTopicPhoto() {
+		return topicPhoto;
+	}
+	public void setTopicPhoto(String topicPhoto) {
+		this.topicPhoto = topicPhoto;
+	}
+	public String getHeight() {
+		return height;
+	}
+	public void setHeight(String height) {
+		this.height = height;
+	}
+	public String getWidth() {
+		return width;
+	}
+	public void setWidth(String width) {
+		this.width = width;
+	}
 	public Timestamp getCreated() {
 		return created;
 	}
@@ -68,8 +90,8 @@ public class WebTopic implements Serializable {
 	@Override
 	public String toString() {
 		return "WebTopic [titleId=" + titleId + ", snId=" + snId + ", title=" + title + ", author=" + author
-				+ ", workDate=" + workDate + ", created=" + created + ", updated=" + updated + "]";
+				+ ", workDate=" + workDate + ", topicPhoto=" + topicPhoto + ", height=" + height + ", width=" + width
+				+ ", created=" + created + ", updated=" + updated + "]";
 	}
-
 
 }

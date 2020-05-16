@@ -60,7 +60,7 @@ public class TopicManageController {
             topicManageService.addTopic(webTopic, desc);
             success.setViewName("redirect:/manage/manage");
         } catch (Exception e) {
-            logger.error("insert topic error, e= " + e.getMessage());
+            logger.error("insert topic error, e=[" + e.getMessage() + "]");
             success.addObject("error", e.getMessage());
             success.setViewName("error");
         }
@@ -86,7 +86,7 @@ public class TopicManageController {
     	   try {
                topicManageService.deleteTopic(Long.valueOf(snId));
            } catch (Exception e) {
-               logger.error("delete topic error, e= " + e.getMessage());
+               logger.error("delete topic error, e=[ " + e.getMessage() + "]");
                return SysResult.build(Constant.ONE, " delete topic fail!!");
            }
            return SysResult.Success();

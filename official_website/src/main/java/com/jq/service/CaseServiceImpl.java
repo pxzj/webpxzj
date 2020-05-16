@@ -33,11 +33,11 @@ public MainCaseDetail selectCaseDetailById(Long mainCaseId) {
 
 	WebCase webCase = caseMapper.selectOneByPK(mainCaseId);
 	if(webCase == null){
-	logger.debug("query web_case no record, mainCaseId = " + mainCaseId);  	
+	logger.debug("query web_case no record, mainCaseId = [" + mainCaseId + "]");  	
 	}
 	 WebSubCase  webSubCase = caseMapper.selectSubCaseByMainCaseId(mainCaseId);
 	 if(webSubCase == null){
-		logger.debug("query web_sub_case no record, mainCaseId = " + mainCaseId);  
+		logger.debug("query web_sub_case no record, mainCaseId =[ " + mainCaseId + "]");  
 	 }
 	 mainCaseDetail.setWebCase(webCase);
 	 mainCaseDetail.setWebSubCase(webSubCase);

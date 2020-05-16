@@ -94,10 +94,22 @@
                 <label>话题发布时间:</label>
                 <input name="workDate" type="date" align="left">
             </p>
-
+                     <div class="formItem">
+                    <label>话题滚动图片:</label>
+                    <input type="file" name="file" onchange="changepic(this)" id="file" class="inputfile"
+                        accept="image/jpg,image/jpeg,image/png,image/PNG" />
+                </div>
         </div>
-
+            <div class="formItem">
+                <div class='container'>
+                    <span id="progress"></span>
+                </div>
+                <img src="" id="show" width="200">
+            </div>
         <input id="desc" name="desc" type="hidden" />
+          <input id="topicPhoto" name="topicPhoto" type="hidden">
+            <input id="height" name="height" type="hidden" />
+            <input id="width" name="width" type="hidden" />
 
         <div style="padding: 5px 0; color: #ccc">话题详情</div>
         <div id="div2" class="text">
@@ -108,16 +120,61 @@
     </form>
 
     <script type="text/javascript">
-        //图片预览
-        function changepic() {
-            var reads = new FileReader();
-            f = document.getElementById('file').files[0];
-            reads.readAsDataURL(f);
-            reads.onload = function (e) {
-                document.getElementById('show').src = this.result;
-            };
+    //图片预览
+    function changepic() {
 
+        var reads = new FileReader();
+        f = document.getElementById('file').files[0];
+        reads.readAsDataURL(f);
+        reads.onload = function (e) {
+            document.getElementById('show').src = this.result;
+        };
+
+        var fd = new FormData();
+        fd.append("file", document.getElementById('file').files[0]);
+        var xhr = new XMLHttpRequest();
+        xhr.upload.addEventListener("progress", uploadProgress, false);
+        xhr.addEventListener("load", uploadComplete, false);
+        xhr.addEventListener("error", uploadFailed, false);
+        xhr.addEventListener("abort", uploadCanceled, false);
+        xhr.open("POST", "/manage/upload"); //修改成自己的接口
+        xhr.send(fd);
+    }
+
+    function uploadProgress(evt) {
+        if (evt.lengthComputable) {
+            var percent = Math.round(evt.loaded * 100 / evt.total);
+            document.getElementById('progress').innerHTML = percent.toFixed(2) + '%';
+            document.getElementById('progress').style.width = percent.toFixed(2) + '%';
+        } else {
+            document.getElementById('progress').innerHTML = 'unable to compute';
         }
+    }
+
+    function uploadComplete(evt) {
+        var res = $.parseJSON(evt.target.responseText);
+        /* 服务器端返回响应时候触发event事件*/
+        if (res.error == "0") {
+            var data = res.data;
+            var topicPhoto = document.getElementById('topicPhoto')
+            topicPhoto.value = data[0].url;
+
+            var height = document.getElementById('height')
+            height.value = data[0].height;
+
+            var width = document.getElementById('width')
+            width.value = data[0].width;
+        }
+    }
+    function uploadFailed(evt) {
+        alert("There was an error attempting to upload the file.");
+    }
+
+    function uploadCanceled(evt) {
+        alert("The upload has been canceled by the user or the browser dropped the connection.");
+    }
+    
+    
         var E = window.wangEditor
         var editor2 = new E('#div2')
 
@@ -126,7 +183,6 @@
         //配置指定文件名
         editor2.customConfig.uploadFileName = 'file'
         editor2.customConfig.uploadImgMaxLength = 5
-        editor2.customConfig.uploadImgMaxSize = 10 * 1024 * 1024
 
         // 用监控函数来监控
         editor2.customConfig.uploadImgHooks = {

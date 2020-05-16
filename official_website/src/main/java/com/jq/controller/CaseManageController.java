@@ -39,7 +39,7 @@ public class CaseManageController {
             caseManageService.addCase(webCase, desc);
             success.setViewName("redirect:/manage/manage");
         } catch (Exception e) {
-            logger.error("insert case error, e= " + e.getMessage());
+            logger.error("insert case error, e=[" + e.getMessage() + "]");
             success.addObject("error", e.getMessage());
             success.setViewName("error");
         }
@@ -62,7 +62,7 @@ public class CaseManageController {
     	try {
             caseManageService.deleteCase(Long.valueOf(snId));
         } catch (Exception e) {
-            logger.error("delete case error, e= " + e.getMessage());
+            logger.error("delete case error, e=[" + e.getMessage() + "]");
             return SysResult.build(Constant.ONE, "deleteCase error!!");
         }
         return SysResult.Success();	

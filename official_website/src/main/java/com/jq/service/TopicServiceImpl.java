@@ -36,13 +36,13 @@ private Logger logger = LoggerFactory.getLogger(this.getClass());
 		// 查询话题表
 		WebTopic webTopic = topicMapper.selectTopicById(topicId);
 	       if(webTopic == null){
-				logger.debug("query webTopic no record, topicId = " + topicId);  
+				logger.debug("query webTopic no record, topicId = [" + topicId + "]");  
 			 } 
 	       topicInfomation.setWebTopic(webTopic);
 		// 查询话题明细表
 		WebTopicDetail  webTopicDetail = topicMapper.selectTopicDetatilByTopicId(topicId);
 		 if(webTopicDetail == null){
-			logger.debug("query web_topic_detail no record, topicId = " + topicId);  
+			logger.debug("query web_topic_detail no record, topicId = [" + topicId + "]");  
 		 }  
 		 topicInfomation.setWebTopicDetail(webTopicDetail);
 		return topicInfomation;

@@ -10,8 +10,8 @@
 		3.映射文件中的Id,应该和接口方法名称一一对应
 	 -->
 <insert id="insertWebTopic" parameterType="webTopic" useGeneratedKeys="true" keyProperty="snId" keyColumn = "sn_id">
-insert into web_topic (sn_id,title,author,work_date,created,updated) values (
-                     null,#{title},#{author},#{workDate},now(),now())
+insert into web_topic (sn_id,title,author,work_date,topic_photo,height,width,created,updated) values (
+                     null,#{title},#{author},#{workDate},#{topicPhoto},#{height},#{width},now(),now())
 </insert>	
 
 <insert id="insertWebTopicDetail" parameterType="webTopicDetail">

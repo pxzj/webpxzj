@@ -25,7 +25,7 @@ public class ExceptionHandlerController {
     public ModelAndView defaultExceptionHandler(HttpServletRequest request, Exception e)
             throws Exception {
     	ModelAndView modelAndView = new ModelAndView();
-    	logger.error("catch exception, e= " + e.getMessage());
+    	logger.error("catch exception, e=[" + e.getMessage() + "]");
     	modelAndView.setViewName("allerror");
         return modelAndView;
     }

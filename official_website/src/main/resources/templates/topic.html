@@ -72,7 +72,7 @@
                     <div class="col-md-4 animate-box " data-animate-effect="fadeInLeft">
                         <div class="js-fullheight font-center">
                             <ul class="slides">
-                                <li th:each="topic:${topics}" th:text="${topic.titleId} + '.'+ ${topic.title}"
+                                <li th:each="topic:${topics}" th:text="${topic.titleId} + '.&nbsp;'+ ${topic.title}"
                                     th:onclick="'javascript : goDetail(\'' + ${ topic.snId } + '\')'" />
                             </ul>
                         </div>

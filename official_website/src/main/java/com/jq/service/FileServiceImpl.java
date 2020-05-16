@@ -11,6 +11,8 @@ import java.util.UUID;
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,7 +26,7 @@ public class FileServiceImpl implements FileService{
     //这个注入配置文件，主要是因为本地的路径和服务器url路径需要动态配置，可以自己写死，也可以动态获取
 	 @Autowired
 	 UrlConfig urlConfig;
-	
+	 private Logger logger = LoggerFactory.getLogger(this.getClass());
 	@Override
 	public PicUploadResult uploadFile(MultipartFile[] uploadFiles, HttpServletRequest request) {
 	
@@ -43,6 +45,7 @@ public class FileServiceImpl implements FileService{
    		
    		//2.判断是否为图片类型  .代表任意一个不为空格的字符
    		if(!fileName.matches("^.*(jpg|png|gif)$")){
+   			logger.debug("upload is not picture type, fileName = [" + fileName + "]");
    			result.setError(1); //表示不是一个图片
    			return result;
    		}
@@ -58,6 +61,7 @@ public class FileServiceImpl implements FileService{
    			
    			if(height == 0 || width == 0){
    				//表示不是图片
+   				logger.debug("upload is not picture , fileName = [" + fileName + "]");
    				result.setError(1);
    				return result;
    			}
@@ -110,6 +114,7 @@ public class FileServiceImpl implements FileService{
     	
    	
    		} catch (Exception e) {
+   			logger.error("upload fail , e = [" + e + "]");
    			result.setError(1); //表示非法图片
    			return result;
    		}   
