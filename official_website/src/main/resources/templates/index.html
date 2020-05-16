@@ -71,23 +71,27 @@
                 <div class="row-bottom-padded-md">
                     <div class="col-md-4 animate-box " data-animate-effect="fadeInLeft">
                         <div class="js-fullheight font-center">
-                            <center>安徽纪青空间设计有限责任公司<br />
-                                J_Q SPACE DESIGN STUDIO<br />
-                                是一家专注商业空间设计的纯设计公司<br />
-                                创始人兼设计总监纪青<br />
-                                有着多年的一线城市设计经验<br />
-                                以及国际性前沿设计审美<br />
-                                专业从事酒店/餐饮/店铺/文娱/办公等室内外空间设计<br />
-                                是一个新锐、年轻、和极具创意的团队<br />
-                                追求品质、注重细节<br />
-                                一直秉承着<br />
-                                为客户创造利益最大化为最终目标<br />
-                                用心，做好的设计<br />
-                                这一理念<br />
-                                对每一个项目进行全方位的分析与系统规划<br />
-                                完成从经营角度<br />
-                                到设计效果<br />
-                                再到施工落地的完美呈现<br /></center>
+                            <div class="outer-container">
+                                <div class="inner-container">
+                                    <center>安徽纪青空间设计有限责任公司<br />
+                                        J_Q SPACE DESIGN STUDIO<br />
+                                        是一家专注商业空间设计的纯设计公司<br />
+                                        创始人兼设计总监纪青<br />
+                                        有着多年的一线城市设计经验<br />
+                                        以及国际性前沿设计审美<br />
+                                        专业从事酒店/餐饮/店铺/文娱/办公等室内外空间设计<br />
+                                        是一个新锐、年轻、和极具创意的团队<br />
+                                        追求品质、注重细节<br />
+                                        一直秉承着<br />
+                                        为客户创造利益最大化为最终目标<br />
+                                        用心，做好的设计<br />
+                                        这一理念<br />
+                                        对每一个项目进行全方位的分析与系统规划<br />
+                                        完成从经营角度<br />
+                                        到设计效果<br />
+                                        再到施工落地的完美呈现<br /></center>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
@@ -95,8 +99,7 @@
                             <div id="app-index" class="flexslider js-fullheight">
                                 <ul class="slides">
                                     <li th:each="img:${imgs}" th:style="${img.imgurl}"
-                                        th:onclick = "'javascript : goDetail(\'' + ${ img.snId } + '\')'"
-                                        >
+                                        th:onclick="'javascript : goDetail(\'' + ${ img.snId } + '\')'">
                                         <div class="overlay"></div>
                                         <div class="container-fluid">
                                             <div class="row">
