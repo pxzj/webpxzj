@@ -1448,3 +1448,11 @@ body {
 strong {
     font-weight: bold;
 }
+.topic_item{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    position: relative;
+    height: 30px;
+    font-size: 1.5rem;
+}

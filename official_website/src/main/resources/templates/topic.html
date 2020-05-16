@@ -73,7 +73,7 @@
                         <div class="js-fullheight font-center">
                             <ul class="slides">
                                 <li th:each="topic:${topics}" th:text="${topic.titleId} + '.&nbsp;'+ ${topic.title}"
-                                    th:onclick="'javascript : goDetail(\'' + ${ topic.snId } + '\')'" />
+                                    th:onclick="'javascript : goDetail(\'' + ${ topic.snId } + '\')'" class="topic_item"/>
                             </ul>
                         </div>
                     </div>
