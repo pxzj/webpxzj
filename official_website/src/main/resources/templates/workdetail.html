@@ -5,72 +5,74 @@
     <meta charset="utf-8">
     <title>纪青空间设计</title>
     <style type="text/css">
-        .body {
+        body {
             width: 800px;
-            margin: 0 auto; 
+            margin: 0 auto;
             font-family: "Microsoft Yahei";
+        }
+
+        .mtitle {
+            width: 400px;
+            height: 25px;
+        }
+        .mtitle span {
+            font-size:15px;
         }
     </style>
 </head>
-<body>
- 
-    <div class="body">
-     
-     <p>
-     <phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
-     <span th:text="'项目名称|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.projectName}"/> </phelvetica></p>
 
-     <div><p></p> 
-     <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
-     <span th:text="'项目面积|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.projectArea}"/> </phelvetica></p>
-     </div>
-       
-      <div><p></p> 
-      <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
-     <span th:text="'完工时间|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.endDate}"/> </phelvetica></p>
-     </div> 
-       
-         <div><p></p> 
-      <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
-      <span th:text="'项目地址|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.projectAddress}"/> </phelvetica></p>
-     </div> 
-       
-         <div><p></p> 
-      <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
-      <span th:text="'设计风格|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.designStyle}"/> </phelvetica></p>
-     </div> 
-       
-         <div><p></p> 
-      <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
-      <span th:text="'主要材料|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.mainMaterial}"/> </phelvetica></p>
-     </div> 
-     
-       <div><p></p> 
-      <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
-      <span th:text="'设计单位|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.designCompany}"/> </phelvetica></p>
-     </div> 
-     
-       <div><p></p> 
-      <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
-      <span th:text="'设 计 师|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.designer}"/> </phelvetica></p>
-     </div> 
-     
-       <div><p></p> 
-      <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
-      <span th:text="'辅助设计|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.assistDisigner}"/> </phelvetica></p>
-     </div> 
-     
-       <div><p></p> 
-     <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
-      <span th:text="'摄  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;影| ' + ${mainCaseDetail.webCase.photographer}"/> </phelvetica></p>
-     </div> 
-     
-       <div><p></p> 
-     <p><phelvetica  font-size="17px"  letter-spacing="0.544000029563904px" line-height="27.2000007629395px"  TEXT-indent="0px"  TEXT-transform="NONE" widows="1" background="white"> 
-      <span th:text="'营销顾问|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.sales}"/> </phelvetica></p>
-     </div> 
-       <div><p widows="1"></p> 
-     </div> 
+<body>
+    <div>
+        <table border="0">
+            <tr>
+                <td class="mtitle">
+                    <span th:text="'项目名称|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.projectName}" />
+                </td>
+                <td class="mtitle">
+                   <span th:text="'项目面积|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.projectArea}" />
+                </td>
+            </tr>
+            <tr>
+                <td class="mtitle">
+                     <span th:text="'完工时间|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.endDate}" />
+                </td>
+                <td class="mtitle">
+                    <span th:text="'项目地址|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.projectAddress}" />
+                </td>
+            </tr>
+            <tr>
+                <td class="mtitle">
+                    <span th:text="'设计风格|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.designStyle}" />
+                </td>
+                <td class="mtitle">
+                    <span th:text="'主要材料|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.mainMaterial}" />
+                </td>
+            </tr>
+            <tr>
+                <td class="mtitle">
+                     <span th:text="'设计单位|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.designCompany}" />
+                </td>
+                <td class="mtitle">
+                    <span th:text="'设  计  师|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.designer}" /> 
+                </td>
+            </tr>
+            <tr>
+                <td class="mtitle">
+                    <span th:text="'辅助设计|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.assistDisigner}" />
+                </td>
+                <td class="mtitle">
+                    <span th:text="'摄  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;影| ' + ${mainCaseDetail.webCase.photographer}" />
+                </td>
+            </tr>
+            <tr>
+                <td class="mtitle">
+                   <span th:text="'营销顾问|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.sales}" /> </phelvetica>
+                </td>
+                
+            </tr>
+        </table>
+        <br/>
+
         <div th:utext="${mainCaseDetail.webCase.sales}">
         </div>
     </div>

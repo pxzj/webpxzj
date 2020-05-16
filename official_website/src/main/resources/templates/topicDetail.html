@@ -10,17 +10,38 @@
             margin: 0 auto;
             font-family: "Microsoft Yahei";
         }
+
+        .title {
+            margin: 0 10px 10px 0;
+            color: rgba(0, 0, 0, 0.3);
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            font-size: 15px;
+        }
+
+        .middle {
+            display: inline-block;
+            margin: 0 10px 10px 0;
+            font-size: 15px;
+            color: #576b95;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            position: relative;
+        }
+        }
     </style>
 </head>
 
 <body>
     <div class="body">
-        <div style="text-align:left" th:text="${topicInfomation.webTopic.title}"></div>
+        <div style="text-align:left" >
+        <h2 th:text="${topicInfomation.webTopic.title}"/>
+            </div>
         <p>
-            <font color="#c24f4a" th:text="${topicInfomation.webTopic.author}" />&nbsp;&nbsp;
-            <font color="#4d80bf" th:text="${topicInfomation.webTopic.title}" />&nbsp;&nbsp;&nbsp;
-            <font color="#c24f4a" th:text="${topicInfomation.webTopic.workDate}" />
-            </font>
+            <span class="title" th:text="${topicInfomation.webTopic.author}" />
+            <span class="middle">
+                <a th:text="${topicInfomation.webTopic.title}" />
+            </span>
+            <span class="title" th:text="${topicInfomation.webTopic.workDate}" />
+            </span>
         </p>
         <div><br /></div>
         <div><br /></div>
