@@ -23,7 +23,8 @@ public class WebTopic implements Serializable {
     private String width;// 宽度
     private Timestamp created;// 创建时间
     private Timestamp updated;// 更新时间
-    
+    // 非数据库字段，仅页面使用
+	 public String imgurl;
 	@Transient
 	public int getTitleId() {
 		return titleId;

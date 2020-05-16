@@ -1,13 +1,14 @@
 package com.jq.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.jq.pojo.WebTopicDetail;
+import java.util.List;
+
+import com.jq.pojo.WebTopic;
 import com.jq.service.TopicService;
 import com.jq.vo.TopicInfomation;
 
@@ -19,7 +20,14 @@ public class TopicController {
     // 查询所有的主案例
     public ModelAndView selectAll() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("topics", topicService.selectAll());
+        List<WebTopic> topics = topicService.selectAll();
+        modelAndView.addObject("topics", topics);
+        if (topics != null) {
+            for (WebTopic topic : topics) {
+                topic.imgurl = "background-image: url(" + topic.getTopicPhoto()+ ");";
+            }
+        }
+        modelAndView.addObject("imgs", topics);
         modelAndView.setViewName("topic");
         return modelAndView;
     }
