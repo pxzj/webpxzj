@@ -1,5 +1,6 @@
 package com.jq.service;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -32,9 +33,12 @@ public List<WebCase> selectAll() {
 public MainCaseDetail selectCaseDetailById(Long mainCaseId) {	
 
 	WebCase webCase = caseMapper.selectOneByPK(mainCaseId);
+	// 查询数据库日期,截图拼接给页面展示
 	if(webCase == null){
 	logger.debug("query web_case no record, mainCaseId = [" + mainCaseId + "]");  	
 	}
+	 webCase.setWorkEndDateStr(dateInterception(webCase.getEndDate()));
+	 
 	 WebSubCase  webSubCase = caseMapper.selectSubCaseByMainCaseId(mainCaseId);
 	 if(webSubCase == null){
 		logger.debug("query web_sub_case no record, mainCaseId =[ " + mainCaseId + "]");  
@@ -44,4 +48,14 @@ public MainCaseDetail selectCaseDetailById(Long mainCaseId) {
 	return mainCaseDetail;
 }
 
+  public String dateInterception(Date date){
+  StringBuffer sb = new StringBuffer(); 
+  String workEndDate = date.toString();
+  String year = workEndDate.substring(0, 4);
+  String month = workEndDate.substring(5,7);
+  String day = workEndDate.substring(8,10);
+  sb.append(year).append(" 年  ").append(month).append(" 月  ").append(day).append(" 日");
+  
+  return sb.toString();
+  }
 }

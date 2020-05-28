@@ -1,5 +1,6 @@
 package com.jq.pojo;
 
+import java.beans.Transient;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
@@ -30,11 +31,22 @@ public class WebCase implements Serializable{
 	 private String sales;// 营销顾问
 	 private Timestamp created;// 创建时间
 	 private Timestamp updated;// 更新时间
+	 private String workEndDateStr;
     // 非数据库字段，仅页面使用
 	 public String imgurl;
+
+	 @Transient
+	public String getWorkEndDateStr() {
+	    return workEndDateStr;
+	}
+	public void setWorkEndDateStr(String workEndDateStr) {
+	   this.workEndDateStr = workEndDateStr;
+    }
+	 
 	public Long getSnId() {
 		return snId;
 	}
+
 	public void setSnId(Long snId) {
 		this.snId = snId;
 	}
