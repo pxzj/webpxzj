@@ -95,9 +95,7 @@ public class FileServiceImpl implements FileService{
    			 * 形成文件的完成路径  E:/jt-upload/yyyy/MM/dd/HH/asdfasdfasdf.jpg
    			 */
    			String realPath = file.getAbsolutePath()  + "/" + uuid + fileType;
-   			//TODO 测试用
-   			logger.info("realPath : " + realPath);
-   			
+	
    			//9.写盘操作
    			uploadFile.transferTo(new File(realPath));
    			
