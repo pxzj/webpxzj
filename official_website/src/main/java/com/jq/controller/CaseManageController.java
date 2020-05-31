@@ -1,7 +1,5 @@
 package com.jq.controller;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.jq.constant.Constant;
 import com.jq.pojo.WebCase;
-import com.jq.pojo.WebTopic;
 import com.jq.service.CaseManageService;
 import com.jq.vo.EasyUIResult;
 import com.jq.vo.SysResult;
@@ -40,8 +37,7 @@ public class CaseManageController {
             success.setViewName("redirect:/manage/manage");
         } catch (Exception e) {
             logger.error("insert case error, e=[" + e.getMessage() + "]");
-            success.addObject("error", e.getMessage());
-            success.setViewName("error");
+            success.setViewName("allerror");
         }
         return success;
     }

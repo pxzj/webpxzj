@@ -27,6 +27,7 @@ public class FileServiceImpl implements FileService{
 	 @Autowired
 	 UrlConfig urlConfig;
 	 private Logger logger = LoggerFactory.getLogger(this.getClass());
+	 
 	@Override
 	public PicUploadResult uploadFile(MultipartFile[] uploadFiles, HttpServletRequest request) {
 	
@@ -87,6 +88,10 @@ public class FileServiceImpl implements FileService{
    			String fileType = 
    					fileName.substring(fileName.lastIndexOf("."));
    			
+   			String datePath = 
+					new SimpleDateFormat("yyyy/MM/dd/HH")
+					.format(new Date());
+   			
    			//使用UUID生成文件名称  sdfsdfsdf-sdfsdfa-sadfasdf-asdfasd
    			String uuid = UUID.randomUUID().toString()
    					.replace("-", "");
@@ -94,7 +99,7 @@ public class FileServiceImpl implements FileService{
    			/**
    			 * 形成文件的完成路径  E:/jt-upload/yyyy/MM/dd/HH/asdfasdfasdf.jpg
    			 */
-   			String realPath = file.getAbsolutePath()  + "/" + uuid + fileType;
+   			String realPath = file.getAbsolutePath() + "/" + uuid + fileType;
 	
    			//9.写盘操作
    			uploadFile.transferTo(new File(realPath));
@@ -104,10 +109,10 @@ public class FileServiceImpl implements FileService{
    			
    			//拼接虚拟路径 
    			//http://image.jt.com/2018/03/02/16/
-   			String realUrlPath = urlConfig.getUrlpath() + "/"
+   			String uPath = urlConfig.getUrlpath() + "/"
    					+ uuid + fileType;
    			Photo Photo = new Photo();
-   			Photo.setUrl(realUrlPath);
+   			Photo.setUrl(uPath);
    			Photo.setHeight(height + "");
    			Photo.setWidth(width + "");
             list.add(Photo);

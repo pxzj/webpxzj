@@ -61,8 +61,7 @@ public class TopicManageController {
             success.setViewName("redirect:/manage/manage");
         } catch (Exception e) {
             logger.error("insert topic error, e=[" + e.getMessage() + "]");
-            success.addObject("error", e.getMessage());
-            success.setViewName("error");
+            success.setViewName("allerror");
         }
         
         return success;

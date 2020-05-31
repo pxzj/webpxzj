@@ -53,8 +53,7 @@ public MainCaseDetail selectCaseDetailById(Long mainCaseId) {
   String workEndDate = date.toString();
   String year = workEndDate.substring(0, 4);
   String month = workEndDate.substring(5,7);
-  String day = workEndDate.substring(8,10);
-  sb.append(year).append(" 年  ").append(month).append(" 月  ").append(day).append(" 日");
+  sb.append(year).append(" 年  ").append(month).append(" 月  ");
   
   return sb.toString();
   }

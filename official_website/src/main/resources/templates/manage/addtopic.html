@@ -182,7 +182,9 @@
         editor2.customConfig.uploadImgServer = '/manage/upload'
         //配置指定文件名
         editor2.customConfig.uploadFileName = 'file'
-        editor2.customConfig.uploadImgMaxLength = 10
+        editor2.customConfig.uploadImgMaxLength = 5
+        editor2.customConfig.uploadImgMaxSize = 10 * 1024 * 1024
+        editor2.customConfig.uploadImgTimeout = 3600000
 
         // 用监控函数来监控
         editor2.customConfig.uploadImgHooks = {
