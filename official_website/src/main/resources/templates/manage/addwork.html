@@ -240,7 +240,7 @@
         editor2.customConfig.uploadImgServer = '/manage/upload'
         //配置指定文件名
         editor2.customConfig.uploadFileName = 'file'
-        editor2.customConfig.uploadImgMaxLength = 5
+        editor2.customConfig.uploadImgMaxLength = 10
         editor2.customConfig.onchange = function (html) {
             var desc = document.getElementById('desc')
             desc.value = html
@@ -256,9 +256,7 @@
                 if (error == 1) {
                     alert('图片上传错误!!');
                 } else {
-                    alert('照片上传成功:' + photo);
                     for (var i in photo) {
-                        alert('照片上传成功了哟 :' + photo[i].url);
 
                         insertImg(photo[i].url)
                     }
