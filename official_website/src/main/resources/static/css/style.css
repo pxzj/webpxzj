@@ -1456,3 +1456,37 @@ strong {
     height: 30px;
     font-size: 1.5rem;
 }
+
+.t_title {
+    margin: 0 10px 10px 0;
+    color: rgba(0, 0, 0, 0.3);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-size: 15px;
+}
+
+.t_middle {
+    display: inline-block;
+    margin: 0 10px 10px 0;
+    font-size: 15px;
+    color: #576b95;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    position: relative;
+}
+
+.t_dettail{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.w_body {
+    width: 800px;
+    margin: 0 auto;
+    font-family: "Microsoft Yahei";
+}
+.w_mtitle {
+    width: 400px;
+    height: 25px;
+}
+.w_mtitle span {
+    font-size:15px;
+}
