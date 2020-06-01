@@ -69,71 +69,61 @@
                 <div class=" row-bottom-padded-md">
                     <div class="col-md-12 animate-box " data-animate-effect="fadeInLeft">
                         <div class="col-md-2"> </div>
-                        <div class="js-fullheight col-md-8">
-                            <div class="w_body">
-                                <div>
-                                    <table border="0">
-                                        <tr>
-                                            <td class="w_mtitle">
-                                                <span
-                                                    th:text="'项目名称|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.projectName}" />
-                                            </td>
-                                            <td class="w_mtitle">
-                                                <span
-                                                    th:text="'项目面积|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.projectArea} +'&nbsp;㎡'" />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w_mtitle">
-                                                <span
-                                                    th:text="'完工时间|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.workEndDateStr}" />
-                                            </td>
-                                            <td class="w_mtitle">
-                                                <span
-                                                    th:text="'项目地址|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.projectAddress}" />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w_mtitle">
-                                                <span
-                                                    th:text="'设计风格|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.designStyle}" />
-                                            </td>
-                                            <td class="w_mtitle">
-                                                <span
-                                                    th:text="'主要材料|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.mainMaterial}" />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w_mtitle">
-                                                <span
-                                                    th:text="'设计单位|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.designCompany}" />
-                                            </td>
-                                            <td class="w_mtitle">
-                                                <span
-                                                    th:text="'设  计  师|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.designer}" />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w_mtitle">
-                                                <span
-                                                    th:text="'辅助设计|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.assistDisigner}" />
-                                            </td>
-                                            <td class="w_mtitle">
-                                                <span
-                                                    th:text="'摄  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;影| ' + ${mainCaseDetail.webCase.photographer}" />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w_mtitle">
-                                                <span th:text="'营销顾问|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.sales}" />
-                                                </phelvetica>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <br />
-                                    <div th:utext="${mainCaseDetail.webCase.sales}">
-                                    </div>
-                                </div>
+                        <div class="col-md-8 t_dettail">
+                            <table border="0">
+                                <tr>
+                                    <td class="w_mtitle">
+                                        <span th:text="'项目名称|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.projectName}" />
+                                    </td>
+                                    <td class="w_mtitle">
+                                        <span
+                                            th:text="'项目面积|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.projectArea} +'㎡'" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w_mtitle">
+                                        <span th:text="'完工时间|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.endDate}" />
+                                    </td>
+                                    <td class="w_mtitle">
+                                        <span
+                                            th:text="'项目地址|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.projectAddress}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w_mtitle">
+                                        <span th:text="'设计风格|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.designStyle}" />
+                                    </td>
+                                    <td class="w_mtitle">
+                                        <span th:text="'主要材料|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.mainMaterial}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w_mtitle">
+                                        <span th:text="'设计单位|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.designCompany}" />
+                                    </td>
+                                    <td class="w_mtitle">
+                                        <span th:text="'设  计  师|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.designer}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w_mtitle">
+                                        <span
+                                            th:text="'辅助设计|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.assistDisigner}" />
+                                    </td>
+                                    <td class="w_mtitle">
+                                        <span
+                                            th:text="'摄  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;影| ' + ${mainCaseDetail.webCase.photographer}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w_mtitle">
+                                        <span th:text="'营销顾问|&nbsp;&nbsp;' + ${mainCaseDetail.webCase.sales}" />
+                                        </phelvetica>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <div th:utext="${mainCaseDetail.webSubCase.subCaseInfo}">
                             </div>
                         </div>
                     </div>

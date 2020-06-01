@@ -417,10 +417,10 @@ figure figcaption {
     width: auto;
 }
 
-#fh5co-hero .flexslider .flex-control-nav li {
+/* #fh5co-hero .flexslider .flex-control-nav li {
     display: block;
     margin-bottom: 10px;
-}
+} */
 
 #fh5co-hero .flexslider .flex-control-nav li a {
     background: rgba(255, 255, 255, 0.2);
