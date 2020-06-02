@@ -71,10 +71,16 @@
                 <div class=" row-bottom-padded-md">
                     <div class="col-md-4 animate-box " data-animate-effect="fadeInLeft">
                         <div class="js-fullheight font-center">
-                            <ul class="slides">
-                                <li th:each="topic:${topics}" th:text="${topic.titleId} + '.&nbsp;'+ ${topic.title}"
-                                    th:onclick="'javascript : goDetail(\'' + ${ topic.snId } + '\')'" class="topic_item"/>
-                            </ul>
+                            <div class="couter-container">
+                                <div class="cinner-container">
+                                    <ul class="slides">
+                                        <li th:each="topic:${topics}"
+                                            th:text="${topic.titleId} + '.&nbsp;'+ ${topic.title}"
+                                            th:onclick="'javascript : goDetail(\'' + ${ topic.snId } + '\')'"
+                                            class="topic_item" />
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
@@ -119,7 +125,7 @@
 
     <!-- MAIN JS -->
     <script src="js/main.js"></script>
-<script>
+    <script>
         function goDetail(id) {
             $(location).attr('href', '/findTopicDetail/' + id);
         }
