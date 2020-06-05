@@ -53,16 +53,18 @@
         <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
         <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
             <img src="images/logom.png" class="logoimg" />
-            <nav id="fh5co-main-menu" role="navigation">
-                <ul>
-                    <li><a href="index">首页/HOME</a></li>
-                    <li><a href="service">服务/SERVICE</a></li>
-                    <li><a href="work">案例/WORK</a></li>
-                    <li class="fh5co-active"><a href="topic">话题/TOPIC</a></li>
-                    <li><a href="recuit">招募/RECRUIT</a></li>
-                    <li><a href="contact">联系/CONTACT</a></li>
-                </ul>
-            </nav>
+            <div style="border-right: 2px solid #999999;padding-top: 50px;padding-bottom: 50px;">
+                <nav id="fh5co-main-menu" role="navigation">
+                    <ul>
+                        <li><a href="index">首页/HOME</a></li>
+                        <li><a href="service">服务/SERVICE</a></li>
+                        <li><a href="work">案例/WORK</a></li>
+                        <li class="fh5co-active"><a href="topic">话题/TOPIC</a></li>
+                        <li><a href="recuit">招募/RECRUIT</a></li>
+                        <li><a href="contact">联系/CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
         </aside>
 
         <div id="fh5co-main">
@@ -73,13 +75,13 @@
                         <div class="js-fullheight font-center">
                             <div class="couter-container">
                                 <div class="cinner-container">
-                                   <!--<ul class="slides">
+                                    <!--<ul class="slides">
                                         <li th:each="topic:${topics}"
                                             th:text="${topic.titleId} + '.&nbsp;'+ ${topic.title}"
                                             th:onclick="'javascript : goDetail(\'' + ${ topic.snId } + '\')'"
                                             class="topic_item" />
                                     </ul>
-                                    --> 
+                                    -->
 
                                     <p>1、外出考察游记</p>
                                     <p>2、安徽4040杰出青年设计师颁奖仪式。</p>
@@ -94,7 +96,7 @@
                         <aside id="fh5co-hero" class="js-fullheight">
                             <div id="app-index" class="flexslider js-fullheight">
                                 <ul class="slides">
-                                   <!--  <li th:each="item:${imgs}" th:style="${item.imgurl}"
+                                    <!--  <li th:each="item:${imgs}" th:style="${item.imgurl}"
                                         th:onclick="'javascript : goDetail(\'' + ${ item.snId } + '\')'">
                                         <div class="overlay"></div>
                                         <div class="container-fluid">
@@ -108,10 +110,10 @@
                                             </div>
                                         </div>
                                     </li>
-                                     --> 
+                                     -->
 
-                                      <li style="background-image: url(images/topic.png);" >
-                                      <div class="overlay"></div>
+                                    <li style="background-image: url(images/topic.png);">
+                                        <div class="overlay"></div>
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div
