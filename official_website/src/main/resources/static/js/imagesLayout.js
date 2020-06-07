@@ -15,14 +15,42 @@
 
 class ImagesLayout {
     constructor(images, containerWidth, numberInLine = 10, limit = 0, stdRatio = 1.5) {
+        var isMobile = {
+            Android: function () {
+                return navigator.userAgent.match(/Android/i);
+            },
+            BlackBerry: function () {
+                return navigator.userAgent.match(/BlackBerry/i);
+            },
+            iOS: function () {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+            },
+            Opera: function () {
+                return navigator.userAgent.match(/Opera Mini/i);
+            },
+            Windows: function () {
+                return navigator.userAgent.match(/IEMobile/i);
+            },
+            any: function () {
+                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+            }
+        };
       // 图片列表
       this.images = images
       // 布局完毕的图片列表
       this.completedImages = []
       // 容器宽度
       this.containerWidth = containerWidth
-      // 单行显示的图片数量
-      this.numberInLine = numberInLine
+      // 电脑端显示
+      if (!isMobile.any()) {
+        // 单行显示的图片数量
+        this.numberInLine = numberInLine
+      } 
+      else
+      {
+        // 单行显示的图片数量
+        this.numberInLine = 1
+      }
       // 限制布局的数量 如果传入的图片列表有100张 但只需要对前20张进行布局 后面的图片忽略 则可以使用此参数限制 如果不传则默认0（不限制）
       this.limit = limit
       // 图片标准宽高比（当最后一行只剩一张图片时 为了不让布局看上去很奇怪 所以要有一个标准宽高比 当图片实际宽高比大于标准宽高比时会发生截取 小于时按照实际高度占满整行显示）

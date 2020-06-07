@@ -426,6 +426,7 @@ figure figcaption {
     width: 12px;
     height: 12px;
     cursor: pointer;
+    border: 2px solid transparent;
 }
 
 #fh5co-hero .flexslider .flex-control-nav li a.flex-active {
@@ -1509,4 +1510,8 @@ strong {
     overflow-y: hidden;
     margin-left: 20px;
     padding-right: 20px;
+}
+
+.h-waterful {
+    width: 150rem;
 }
