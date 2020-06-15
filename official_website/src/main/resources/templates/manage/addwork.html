@@ -156,9 +156,9 @@
 
             </div>
             <div class="formItem">
-                <div class='container'>
-                    <span id="progress"></span>
-                </div>
+              <!--  <div class='container'>
+               <span id="progress"></span>
+                </div>-->     
                 <img src="" id="show" width="200">
             </div>
             <input id="desc" name="desc" type="hidden" />
@@ -190,7 +190,7 @@
             var fd = new FormData();
             fd.append("file", document.getElementById('file').files[0]);
             var xhr = new XMLHttpRequest();
-            xhr.upload.addEventListener("progress", uploadProgress, false);
+           // xhr.upload.addEventListener("progress", uploadProgress, false);
             xhr.addEventListener("load", uploadComplete, false);
             xhr.addEventListener("error", uploadFailed, false);
             xhr.addEventListener("abort", uploadCanceled, false);

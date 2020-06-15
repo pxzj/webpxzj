@@ -112,6 +112,15 @@ figure figcaption {
     -o-transition: 0.5s;
     transition: 0.5s;
 }
+#fh5co-aside:after{
+    content: '';
+    position: absolute;
+    top: 30%;
+    right: 0px;
+    height: 40%;
+    width: 2px;
+    background-color: #999999;
+}
 
 @media screen and (max-width: 1200px) {
     #fh5co-aside {
@@ -203,7 +212,7 @@ figure figcaption {
     bottom: 7px;
     left: 10px;
     right: 10px;
-    background-color: #228896;
+    background-color: #808080;
     visibility: hidden;
     -webkit-transform: scaleX(0);
     -moz-transform: scaleX(0);
@@ -396,7 +405,6 @@ figure figcaption {
     left: 0;
     right: 0;
     content: '';
-    background: rgba(0, 0, 0, 0.3);
 }
 
 #fh5co-hero .flexslider .slides li {
@@ -405,8 +413,13 @@ figure figcaption {
     background-position: bottom center;
     min-height: 500px;
     position: relative;
+    background-repeat: no-repeat;
+    background-size:100% 100%; 
 }
-
+.indeximg:hover{
+    -webkit-filter: brightness(150%);
+    filter: brightness(150%);
+}
 #fh5co-hero .flexslider .flex-control-nav {
     bottom: 20px;
     z-index: 1000;
@@ -1431,20 +1444,20 @@ body {
 }
 .outer-container{
 	width: 100%;
-	height: 500px;
+	height: 40%;
 	position: relative;
     overflow: hidden;
 }
 .inner-container{
 	position: absolute;
 	left: 0;
-	top: 100px;
+	top: 1px;
 	right: -17px;
 	bottom: 0;
 	overflow-x: hidden;
     overflow-y: scroll;
-    margin-left: 30px;
-    padding-right: 30px;
+    margin-left: 10px;
+    padding-right: 20px;
 }
 
 strong {
@@ -1514,4 +1527,7 @@ strong {
 
 .h-waterful {
     width: 150rem;
+}
+.serviceimg{
+    transform: scale(0.9);
 }

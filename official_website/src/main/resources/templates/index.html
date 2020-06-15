@@ -51,20 +51,18 @@
 <body>
     <div id="fh5co-page">
         <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-        <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+        <aside id="fh5co-aside" role="complementary" class="border js-fullheight bordernav">
             <img src="images/logom.png" class="logoimg" />
-            <div style="border-right: 2px solid #999999;padding-top: 50px;padding-bottom: 50px;">
-                <nav id="fh5co-main-menu" role="navigation">
-                    <ul>
-                        <li class="fh5co-active"><a href="index">首页/HOME</a></li>
-                        <li><a href="service">服务/SERVICE</a></li>
-                        <li><a href="work">案例/WORK</a></li>
-                        <li><a href="topic">话题/TOPIC</a></li>
-                        <li><a href="recuit">招募/RECRUIT</a></li>
-                        <li><a href="contact">联系/CONTACT</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <nav id="fh5co-main-menu" role="navigation">
+                <ul>
+                    <li class="fh5co-active"><a href="index">首页/HOME</a></li>
+                    <li><a href="service">服务/SERVICE</a></li>
+                    <li><a href="work">案例/WORK</a></li>
+                    <li><a href="topic">话题/TOPIC</a></li>
+                    <li><a href="recuit">招募/RECRUIT</a></li>
+                    <li><a href="contact">联系/CONTACT</a></li>
+                </ul>
+            </nav>
         </aside>
 
         <div id="fh5co-main">
@@ -79,19 +77,22 @@
                                         J_Q SPACE DESIGN STUDIO<br />
                                         是一家专注商业空间设计的纯设计公司<br />
                                         创始人兼设计总监纪青<br />
+                                        安徽省4040青年杰出设计师<br />
+                                        注册高级室内设计师<br />
                                         有着多年的一线城市设计经验<br />
                                         以及国际性前沿设计审美<br />
-                                        专业从事酒店/餐饮/店铺/文娱/办公等室内外空间设计<br />
-                                        是一个新锐、年轻、和极具创意的团队<br />
+                                        专业从事酒店｜餐饮｜店铺｜文娱｜办公｜售楼处｜样板间等室内外空间设计<br />
+                                        我们是一个新锐、年轻、和极具创意的团队<br />
                                         追求品质、注重细节<br />
                                         一直秉承着<br />
                                         为客户创造利益最大化为最终目标<br />
                                         用心，做好的设计<br />
-                                        这一理念<br />
+                                        这一宗旨<br />
                                         对每一个项目进行全方位的分析与系统规划<br />
                                         完成从经营角度<br />
                                         到设计效果<br />
-                                        再到施工落地的完美呈现<br /></center>
+                                        再到施工落地的完美呈现<br />
+                                        <br /></center>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +102,8 @@
                             <div id="app-index" class="flexslider js-fullheight">
                                 <ul class="slides">
                                     <li th:each="img:${imgs}" th:style="${img.imgurl}"
-                                        th:onclick="'javascript : goDetail(\'' + ${ img.snId } + '\')'">
+                                        th:onclick="'javascript : goDetail(\'' + ${ img.snId } + '\')'"
+                                        class="indeximg">
                                         <div class="overlay"></div>
                                         <div class="container-fluid">
                                             <div class="row">
@@ -121,7 +123,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
     <!-- jQuery -->
